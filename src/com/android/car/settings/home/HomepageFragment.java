@@ -25,8 +25,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 
+import com.android.car.list.LaunchAppLineItem;
 import com.android.car.list.TypedPagedListAdapter;
 import com.android.car.settings.R;
 import com.android.car.settings.applications.ApplicationSettingsFragment;
@@ -34,12 +36,13 @@ import com.android.car.settings.common.ListSettingsFragment;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.datetime.DatetimeSettingsFragment;
 import com.android.car.settings.display.DisplaySettingsFragment;
-import com.android.car.settings.security.ChooseLockTypeFragment;
+import com.android.car.settings.security.SettingsScreenLockActivity;
 import com.android.car.settings.sound.SoundSettingsFragment;
 import com.android.car.settings.suggestions.SettingsSuggestionsController;
 import com.android.car.settings.system.SystemSettingsFragment;
 import com.android.car.settings.users.UsersListFragment;
 import com.android.car.settings.wifi.CarWifiManager;
+import com.android.settingslib.users.UserManagerHelper;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -57,6 +60,7 @@ public class HomepageFragment extends ListSettingsFragment implements
     private CarWifiManager mCarWifiManager;
     private WifiLineItem mWifiLineItem;
     private BluetoothLineItem mBluetoothLineItem;
+    private UserManagerHelper mUserManagerHelper;
     // This tracks the number of suggestions currently shown in the fragment. This is based off of
     // the assumption that suggestions are 0 through (num suggestions - 1) in the adapter. Do not
     // change this assumption without updating the code in onSuggestionLoaded.
@@ -105,6 +109,7 @@ public class HomepageFragment extends ListSettingsFragment implements
         mCarWifiManager = new CarWifiManager(getContext(), this /* listener */);
         mWifiLineItem = new WifiLineItem(getContext(), mCarWifiManager, mFragmentController);
         mBluetoothLineItem = new BluetoothLineItem(getContext(), mFragmentController);
+        mUserManagerHelper = new UserManagerHelper(getContext());
 
         // Call super after the wifiLineItem and BluetoothLineItem are setup, because
         // those are needed in super.onCreate().
@@ -187,13 +192,17 @@ public class HomepageFragment extends ListSettingsFragment implements
                 null,
                 UsersListFragment.newInstance(),
                 mFragmentController));
-        lineItems.add(new SimpleIconTransitionLineItem(
-                R.string.security_settings_title,
-                R.drawable.ic_lock,
-                getContext(),
-                null,
-                ChooseLockTypeFragment.newInstance(),
-                mFragmentController));
+
+        // Guest users can't set screen locks
+        if (!mUserManagerHelper.currentProcessRunningAsGuestUser()) {
+            lineItems.add(new LaunchAppLineItem(
+                    getString(R.string.security_settings_title),
+                    Icon.createWithResource(getContext(), R.drawable.ic_lock),
+                    getContext(),
+                    null,
+                    new Intent(getContext(), SettingsScreenLockActivity.class)));
+        }
+
         lineItems.add(new SimpleIconTransitionLineItem(
                 R.string.system_setting_title,
                 R.drawable.ic_settings_about,
