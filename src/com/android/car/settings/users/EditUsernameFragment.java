@@ -20,7 +20,6 @@ import android.car.user.CarUserManagerHelper;
 import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.design.widget.TextInputEditText;
 import android.view.View;
 import android.widget.Button;
 
@@ -28,13 +27,14 @@ import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
 import com.android.car.settingslib.util.SettingsConstants;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 /**
  * Shows details for a user with the ability to edit the name, remove user and switch.
  */
 public class EditUsernameFragment extends BaseFragment implements
         ConfirmRemoveUserDialog.ConfirmRemoveUserListener {
     public static final String EXTRA_USER_INFO = "extra_user_info";
-    private static final String TAG = "EditUsernameFragment";
     private UserInfo mUserInfo;
 
     private TextInputEditText mUserNameEditText;
