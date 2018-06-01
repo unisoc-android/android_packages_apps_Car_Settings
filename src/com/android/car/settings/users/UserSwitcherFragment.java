@@ -23,11 +23,14 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
+import com.android.car.settings.common.CarUxRestrictionsHelper;
 
 /**
  * Shows a user switcher for all Users available on this device.
  */
 public class UserSwitcherFragment extends BaseFragment {
+
+    private UserGridRecyclerView mUserGridView;
 
     /**
      * Initializes the UserSwitcherFragment
@@ -36,7 +39,7 @@ public class UserSwitcherFragment extends BaseFragment {
     public static UserSwitcherFragment newInstance() {
         UserSwitcherFragment userSwitcherFragment = new UserSwitcherFragment();
         Bundle bundle = BaseFragment.getBundle();
-        bundle.putInt(EXTRA_TITLE_ID, R.string.user_switcher_title);
+        bundle.putInt(EXTRA_TITLE_ID, R.string.users_list_title);
         bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
         bundle.putInt(EXTRA_LAYOUT, R.layout.car_user_switcher);
         userSwitcherFragment.setArguments(bundle);
@@ -47,7 +50,7 @@ public class UserSwitcherFragment extends BaseFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        UserGridRecyclerView mUserGridView = getView().findViewById(R.id.user_grid);
+        mUserGridView = getView().findViewById(R.id.user_grid);
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(),
                 getContext().getResources().getInteger(R.integer.user_switcher_num_col));
         mUserGridView.setFragment(this);
@@ -66,6 +69,22 @@ public class UserSwitcherFragment extends BaseFragment {
     @Override
     public boolean canBeShown(CarUxRestrictions carUxRestrictions) {
         return true;
+    }
+
+
+    @Override
+    public void onUxRestrictionChanged(CarUxRestrictions carUxRestrictions) {
+        applyRestriction(CarUxRestrictionsHelper.isNoSetup(carUxRestrictions));
+    }
+
+    private void applyRestriction(boolean restricted) {
+        if (mUserGridView != null) {
+            if (restricted) {
+                mUserGridView.hideAddUser();
+            } else {
+                mUserGridView.showAddUser();
+            }
+        }
     }
 
 }
