@@ -16,23 +16,24 @@
 
 package com.android.car.settings.users;
 
-import android.app.Dialog;
-import android.os.Bundle;
-
-import androidx.car.app.CarAlertDialog;
-import androidx.fragment.app.DialogFragment;
-
-import com.android.car.settings.R;
+import android.content.Context;
+import android.content.pm.UserInfo;
+import android.os.UserManager;
 
 /**
- * Dialog to inform that user deletion failed.
+ * Util class for providing basic, universally needed user-related methods.
  */
-public class RemoveUserErrorDialog extends DialogFragment {
-    @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        return new CarAlertDialog.Builder(getContext())
-                .setTitle(R.string.remove_user_error_title)
-                .setPositiveButton(android.R.string.ok, null)
-                .create();
+public class UserUtils {
+    private UserUtils() {}
+
+    /**
+     * Fetches the {@link UserInfo} from UserManager system service for the user ID.
+     *
+     * @param userId ID that corresponds to the returned UserInfo.
+     * @return {@link UserInfo} for the user ID.
+     */
+    public static UserInfo getUserInfo(Context context, int userId) {
+        UserManager userManager = (UserManager) context.getSystemService(Context.USER_SERVICE);
+        return userManager.getUserInfo(userId);
     }
 }
