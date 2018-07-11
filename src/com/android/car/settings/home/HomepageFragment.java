@@ -73,7 +73,6 @@ public class HomepageFragment extends ListItemSettingsFragment implements
     private int mNumSettingsSuggestions;
 
     private List<ListItem> mListItems;
-
     private final BroadcastReceiver mBtStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -181,7 +180,7 @@ public class HomepageFragment extends ListItemSettingsFragment implements
                 R.drawable.ic_settings_display,
                 getContext(),
                 null,
-                DisplaySettingsFragment.getInstance(),
+                DisplaySettingsFragment.newInstance(),
                 getFragmentController()));
         lineItems.add(new SimpleIconTransitionLineItem(
                 R.string.sound_settings,
