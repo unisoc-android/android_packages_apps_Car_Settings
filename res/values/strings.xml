@@ -438,6 +438,8 @@
     <!-- User info -->
     <!-- Title for Guest user [CHAR LIMIT=35] -->
     <string name="user_guest">Guest</string>
+    <!-- Title for button for starting a new guest session [CHAR LIMIT=35] -->
+    <string name="start_guest_session">Guest</string>
     <!-- Description for icon to switch user [CHAR LIMIT=35] -->
     <string name="user_switch">Switch</string>
     <!-- Description for user name that is currently in use -->
@@ -515,7 +517,7 @@
     <!-- Title string shown in choose lock pattern [CHAR LIMIT=40] -->
     <string name="lockscreen_choose_your_pattern">Choose your pattern</string>
     <!-- Title string shown in choose lock password [CHAR LIMIT=40] -->
-    <string name="lockscreen_choose_your_password">Choose your passowrd</string>
+    <string name="lockscreen_choose_your_password">Choose your password</string>
     <!-- Subtitle indicating the current screen lock type (none/PIN/pattern/password) [CHAR LIMIT=40] -->
     <string name="current_screen_lock">Current screen lock</string>
     <!-- Message on first screen of choose pattern flow [CHAR LIMIT=40] -->
