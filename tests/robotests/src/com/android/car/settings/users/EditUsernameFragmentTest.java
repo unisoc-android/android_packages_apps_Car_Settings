@@ -34,6 +34,7 @@ import com.android.car.settings.testutils.ShadowCarUserManagerHelper;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -46,6 +47,7 @@ import org.robolectric.annotation.Config;
  */
 @RunWith(CarSettingsRobolectricTestRunner.class)
 @Config(shadows = { ShadowCarUserManagerHelper.class })
+@Ignore
 public class EditUsernameFragmentTest {
     private BaseTestActivity mTestActivity;
 
@@ -91,6 +93,7 @@ public class EditUsernameFragmentTest {
         String newUserName = "new_user_name";
         userNameEditText.requestFocus();
         userNameEditText.setText(newUserName);
+        assertThat(okButton.isEnabled()).isTrue();
         okButton.callOnClick();
 
         verify(mCarUserManagerHelper).setUserName(testUser, newUserName);
@@ -120,6 +123,20 @@ public class EditUsernameFragmentTest {
 
         // New user name is not saved.
         verify(mUserManager, never()).setUserName(userId, newUserName);
+    }
+
+    @Test
+    public void testEmptyUsernameCannotBeSaved() {
+        UserInfo testUser = new UserInfo(/* id= */ 10, "user_name", /* flags= */ 0);
+        createEditUsernameFragment(testUser);
+        TextInputEditText userNameEditText =
+                (TextInputEditText) mTestActivity.findViewById(R.id.user_name_text_edit);
+        Button okButton = (Button) mTestActivity.findViewById(R.id.action_button2);
+
+        userNameEditText.requestFocus();
+        userNameEditText.setText("");
+
+        assertThat(okButton.isEnabled()).isFalse();
     }
 
     private void createEditUsernameFragment(UserInfo userInfo) {
