@@ -21,12 +21,15 @@ import android.car.drivingstate.CarUxRestrictions;
 import android.car.user.CarUserManagerHelper;
 import android.content.Context;
 import android.content.pm.UserInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.car.widget.PagedListView;
 
@@ -36,6 +39,8 @@ import com.android.car.settings.common.CarUxRestrictionsHelper;
 import com.android.car.settings.home.HomepageFragment;
 import com.android.car.settings.users.UserIconProvider;
 import com.android.car.settings.users.UserSwitcherFragment;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * Shows a page to access frequently used settings.
@@ -51,17 +56,16 @@ public class QuickSettingFragment extends BaseFragment {
     private float mOpacityDisabled;
     private float mOpacityEnabled;
 
-    /**
-     * Returns an instance of this class.
-     */
-    public static QuickSettingFragment newInstance() {
-        QuickSettingFragment quickSettingFragment = new QuickSettingFragment();
-        Bundle bundle = QuickSettingFragment.getBundle();
-        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_quick_settings);
-        bundle.putInt(EXTRA_LAYOUT, R.layout.quick_settings);
-        bundle.putInt(EXTRA_TITLE_ID, R.string.settings_label);
-        quickSettingFragment.setArguments(bundle);
-        return quickSettingFragment;
+    @Override
+    @LayoutRes
+    protected int getActionBarLayoutId() {
+        return R.layout.action_bar_quick_settings;
+    }
+
+    @Override
+    @LayoutRes
+    protected int getLayoutId() {
+        return R.layout.quick_settings;
     }
 
     @Override
@@ -84,7 +88,7 @@ public class QuickSettingFragment extends BaseFragment {
         mFullSettingBtn.setOnClickListener(mHomeFragmentLauncher);
         mUserSwitcherBtn = activity.findViewById(R.id.user_switcher_btn);
         mUserSwitcherBtn.setOnClickListener(v -> {
-            getFragmentController().launchFragment(UserSwitcherFragment.newInstance());
+            getFragmentController().launchFragment(new UserSwitcherFragment());
         });
         setupUserButton(activity);
 
@@ -98,6 +102,24 @@ public class QuickSettingFragment extends BaseFragment {
                 .addTile(new CelluarTile(activity, mGridAdapter))
                 .addSeekbarTile(new BrightnessTile(activity));
         mListView.setAdapter(mGridAdapter);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // In non-user builds (that is, user-debug, eng, etc), display some version information.
+        if (!Build.IS_USER) {
+            long buildTimeDiffDays =
+                    TimeUnit.MILLISECONDS.toDays(System.currentTimeMillis() - Build.TIME);
+            String str = String.format(view.getResources().getString(R.string.build_info_fmt),
+                    Build.FINGERPRINT, SystemProperties.get("ro.build.date", "<unknown>"),
+                    buildTimeDiffDays);
+
+            TextView buildInfo = view.requireViewById(R.id.build_info);
+            buildInfo.setVisibility(View.VISIBLE);
+            buildInfo.setText(str);
+        }
     }
 
     @Override
@@ -147,7 +169,7 @@ public class QuickSettingFragment extends BaseFragment {
             if (mShowDOBlockingMessage) {
                 getFragmentController().showDOBlockingMessage();
             } else {
-                getFragmentController().launchFragment(HomepageFragment.newInstance());
+                getFragmentController().launchFragment(new HomepageFragment());
             }
         }
     }
