@@ -27,7 +27,6 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.car.widget.ListItemProvider;
 
@@ -95,7 +94,7 @@ public class UsersListFragment extends ListItemSettingsFragment
         mAddUserButton = (Button) getActivity().findViewById(R.id.action_button1);
         mAddUserButton.setOnClickListener(v -> {
             if (mRestricted) {
-                UsersListFragment.this.getFragmentController().showDOBlockingMessage();
+                getFragmentController().showBlockingMessage();
             } else {
                 handleAddUserClicked();
             }
@@ -116,8 +115,8 @@ public class UsersListFragment extends ListItemSettingsFragment
     }
 
     @Override
-    public void onUxRestrictionChanged(@NonNull CarUxRestrictions carUxRestrictions) {
-        mRestricted = CarUxRestrictionsHelper.isNoSetup(carUxRestrictions);
+    public void onUxRestrictionsChanged(CarUxRestrictions restrictionInfo) {
+        mRestricted = CarUxRestrictionsHelper.isNoSetup(restrictionInfo);
         mAddUserButton.setAlpha(mRestricted ? mOpacityDisabled : mOpacityEnabled);
     }
 

@@ -17,6 +17,7 @@
 package com.android.car.settings.common;
 
 import android.car.drivingstate.CarUxRestrictions;
+import android.car.drivingstate.CarUxRestrictionsManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -35,44 +36,13 @@ import com.android.car.settings.R;
 /**
  * Base fragment for setting activity.
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment implements
+        CarUxRestrictionsManager.OnUxRestrictionsChangedListener {
 
     /**
      * For indicating a fragment is running in Setup Wizard
      */
     public static final String EXTRA_RUNNING_IN_SETUP_WIZARD = "extra_running_in_setup_wizard";
-
-    /**
-     * Controls the transition of fragment.
-     */
-    public interface FragmentController {
-        /**
-         * Launches fragment in the main container of current activity.
-         */
-        void launchFragment(BaseFragment fragment);
-
-        /**
-         * Pops the top off the fragment stack.
-         */
-        void goBack();
-
-        /**
-         * Shows a message that current feature is not available when driving.
-         */
-        void showDOBlockingMessage();
-    }
-
-    /**
-     * Provides current CarUxRestrictions.
-     */
-    public interface UXRestrictionsProvider {
-
-        /**
-         * Fetches current CarUxRestrictions
-         */
-        @NonNull
-        CarUxRestrictions getCarUxRestrictions();
-    }
 
     /**
      * Assume The activity holds this fragment also implements the FragmentController.
@@ -83,11 +53,11 @@ public abstract class BaseFragment extends Fragment {
     }
 
     /**
-     * Assume The activity holds this fragment also implements the UXRestrictionsProvider.
+     * Assume The activity holds this fragment also implements the UxRestrictionsProvider.
      * This function should be called after onAttach()
      */
     protected final CarUxRestrictions getCurrentRestrictions() {
-        return ((UXRestrictionsProvider) getActivity()).getCarUxRestrictions();
+        return ((UxRestrictionsProvider) getActivity()).getCarUxRestrictions();
     }
 
     /**
@@ -98,10 +68,8 @@ public abstract class BaseFragment extends Fragment {
         return !CarUxRestrictionsHelper.isNoSetup(carUxRestrictions);
     }
 
-    /**
-     * Notifies the fragment with the latest CarUxRestrictions change.
-     */
-    protected void onUxRestrictionChanged(@NonNull CarUxRestrictions carUxRestrictions) {
+    @Override
+    public void onUxRestrictionsChanged(CarUxRestrictions restrictionInfo) {
     }
 
     /**
@@ -149,8 +117,8 @@ public abstract class BaseFragment extends Fragment {
         if (!(getActivity() instanceof FragmentController)) {
             throw new IllegalStateException("Must attach to a FragmentController");
         }
-        if (!(getActivity() instanceof UXRestrictionsProvider)) {
-            throw new IllegalStateException("Must attach to a UXRestrictionsProvider");
+        if (!(getActivity() instanceof UxRestrictionsProvider)) {
+            throw new IllegalStateException("Must attach to a UxRestrictionsProvider");
         }
     }
 
@@ -180,7 +148,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        onUxRestrictionChanged(getCurrentRestrictions());
+        onUxRestrictionsChanged(getCurrentRestrictions());
     }
 
     /**
