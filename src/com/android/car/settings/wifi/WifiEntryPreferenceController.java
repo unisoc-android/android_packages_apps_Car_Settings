@@ -13,21 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.car.settings.common;
+
+package com.android.car.settings.wifi;
+
+import android.content.Context;
+
+import com.android.car.settings.common.BasePreferenceController;
 
 /**
- * Keeps ViewType ids for all customer ListItems in a centralized location.
+ * Controller which determines if the top level entry into Wi-Fi settings should be displayed
+ * based on device capabilities.
  */
-public final class CustomListItemTypes {
-    // According to ListItemAdapter, customized view type needs to be negative.
-    public static final int CHECK_BOX_VIEW_TYPE = -1;
-    public static final int EDIT_TEXT_VIEW_TYPE = -2;
-    public static final int PASSWORD_VIEW_TYPE = -3;
-    public static final int SPINNER_VIEW_TYPE = -4;
+public class WifiEntryPreferenceController extends BasePreferenceController {
 
-    /**
-     * No one should instantiate this class.
-     */
-    private CustomListItemTypes() {
+    public WifiEntryPreferenceController(Context context, String preferenceKey) {
+        super(context, preferenceKey);
+    }
+
+    @Override
+    public int getAvailabilityStatus() {
+        return WifiUtil.isWifiAvailable(mContext) ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
 }

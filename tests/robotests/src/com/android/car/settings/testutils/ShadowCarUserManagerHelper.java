@@ -53,6 +53,11 @@ public class ShadowCarUserManagerHelper {
     }
 
     @Implementation
+    public int getCurrentProcessUserId() {
+        return sMockInstance.getCurrentProcessUserId();
+    }
+
+    @Implementation
     public boolean isCurrentProcessUser(UserInfo userInfo) {
         return sMockInstance.isCurrentProcessUser(userInfo);
     }
@@ -78,13 +83,13 @@ public class ShadowCarUserManagerHelper {
     }
 
     @Implementation
-    public boolean isCurrentProcessDemoUser() {
-        return sMockInstance.isCurrentProcessDemoUser();
+    public boolean isUserLimitReached() {
+        return sMockInstance.isUserLimitReached();
     }
 
     @Implementation
-    public boolean isUserLimitReached() {
-        return sMockInstance.isUserLimitReached();
+    public boolean canCurrentProcessModifyAccounts() {
+        return sMockInstance.canCurrentProcessModifyAccounts();
     }
 
     @Implementation
@@ -108,13 +113,23 @@ public class ShadowCarUserManagerHelper {
     }
 
     @Implementation
-    public void assignAdminPrivileges(UserInfo user) {
-        sMockInstance.assignAdminPrivileges(user);
+    public void grantAdminPermissions(UserInfo user) {
+        sMockInstance.grantAdminPermissions(user);
+    }
+
+    @Implementation
+    public boolean isCurrentProcessDemoUser() {
+        return sMockInstance.isCurrentProcessDemoUser();
     }
 
     @Implementation
     public boolean isCurrentProcessAdminUser() {
         return sMockInstance.isCurrentProcessAdminUser();
+    }
+
+    @Implementation
+    public boolean isCurrentProcessGuestUser() {
+        return sMockInstance.isCurrentProcessGuestUser();
     }
 
     @Implementation
