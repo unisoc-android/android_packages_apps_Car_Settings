@@ -17,8 +17,6 @@
 package com.android.car.settings.datetime;
 
 
-import android.content.Context;
-
 import androidx.annotation.XmlRes;
 
 import com.android.car.settings.R;
@@ -30,19 +28,11 @@ import java.util.TimeZone;
  * Lists all time zone and its offset from GMT.
  */
 public class TimeZonePickerScreenFragment extends BasePreferenceFragment {
-    private static final String PREFERENCE_CATEGORY_KEY = "timezone_picker_screen";
 
     @Override
     @XmlRes
     protected int getPreferenceScreenResId() {
         return R.xml.timezone_picker_screen_fragment;
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        use(TimeZonePickerScreenPreferenceController.class, PREFERENCE_CATEGORY_KEY)
-                .setFragmentManager(getFragmentManager());
     }
 
     @Override

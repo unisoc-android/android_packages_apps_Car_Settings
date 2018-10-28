@@ -28,6 +28,7 @@ import android.widget.TextView;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 import androidx.annotation.XmlRes;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
@@ -54,10 +55,11 @@ import java.util.Map;
  * {@link LifecycleObserver} is registered with this fragment's {@link Lifecycle}.
  *
  * <p>{@code preferenceTheme} must be specified in the application theme, and the parent to which
- * this fragment attaches must implement {@link UxRestrictionsProvider} or an
- * {@link IllegalStateException} will be thrown during {@link #onAttach(Context)}. Changes to
- * driving state restrictions are propagated to controllers. If a controller becomes unavailable
- * for a particular driving state, its preference is hidden from the UI.
+ * this fragment attaches must implement {@link UxRestrictionsProvider} and
+ * {@link FragmentController} or an {@link IllegalStateException} will be thrown during
+ * {@link #onAttach(Context)}. Changes to driving state restrictions are propagated to
+ * controllers. If a controller becomes unavailable for a particular driving state, its
+ * preference is hidden from the UI.
  */
 public abstract class BasePreferenceFragment extends PreferenceFragmentCompat implements
         CarUxRestrictionsManager.OnUxRestrictionsChangedListener {
@@ -97,7 +99,7 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat im
     }
 
     /**
-     * Returns the controller of the given {@param clazz} for the given {@param preferenceKey}.
+     * Returns the controller of the given {@param clazz} for the given {@param preferenceKeyResId}.
      * Subclasses may use this method in {@link #onAttach(Context)} to call setters on your
      * controller to pass arguments in addition to the context and preference key after
      * construction.
@@ -107,15 +109,16 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat im
      * @Override
      * public void onAttach(Context context) {
      *     super.onAttach(context);
-     *     use(MyPreferenceController.class, "myKey").setMyArg(myArg);
+     *     use(MyPreferenceController.class, R.string.pk_my_key).setMyArg(myArg);
      * }
      * }</pre>
      */
     @SuppressWarnings("unchecked") // Class is used as map key.
     protected <T extends BasePreferenceController> T use(Class<T> clazz,
-            String preferenceKey) {
+            @StringRes int preferenceKeyResId) {
         List<BasePreferenceController> controllerList = mPreferenceControllersLookup.get(clazz);
         if (controllerList != null) {
+            String preferenceKey = getString(preferenceKeyResId);
             for (BasePreferenceController controller : controllerList) {
                 if (controller.getPreferenceKey().equals(preferenceKey)) {
                     return (T) controller;
@@ -130,6 +133,9 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat im
         super.onAttach(context);
         if (!(getActivity() instanceof UxRestrictionsProvider)) {
             throw new IllegalStateException("Must attach to a UxRestrictionsProvider");
+        }
+        if (!(getActivity() instanceof FragmentController)) {
+            throw new IllegalStateException("Must attach to a FragmentController");
         }
         /*
          * If this fragment was detached and then reattached, it is possible that the local
@@ -154,7 +160,7 @@ public abstract class BasePreferenceFragment extends PreferenceFragmentCompat im
         mPreferenceControllers.addAll(createPreferenceControllers(styledContext));
         mPreferenceControllers.addAll(
                 PreferenceControllerListHelper.getPreferenceControllersFromXml(styledContext,
-                        getPreferenceScreenResId()));
+                        getPreferenceScreenResId(), (FragmentController) requireActivity()));
 
         Lifecycle lifecycle = getLifecycle();
         mPreferenceControllers.forEach(controller -> {
