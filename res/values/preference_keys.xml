@@ -36,6 +36,11 @@
     <string name="pk_device_extra_settings" translatable="false">device_extra_settings</string>
     <string name="pk_personal_extra_settings" translatable="false">personal_extra_settings</string>
 
+    <!-- Applications Settings -->
+    <string name="pk_applications_settings_screen" translatable="false">
+        applications_settings_screen
+    </string>
+
     <!-- DateTime Settings -->
     <string name="pk_auto_datetime_switch" translatable="false">auto_datetime_switch</string>
     <string name="pk_auto_timezone_switch" translatable="false">auto_timezone_switch</string>
@@ -46,6 +51,12 @@
     </string>
     <string name="pk_use_24hour_switch" translatable="false">use_24hour_switch</string>
     <string name="pk_timezone_picker_screen" translatable="false">timezone_picker_screen</string>
+
+    <!-- Display Settings -->
+    <string name="pk_adaptive_brightness_switch" translatable="false">
+        adaptive_brightness_switch
+    </string>
+    <string name="pk_brightness_level" translatable="false">brightness_level</string>
 
     <!-- System Settings -->
     <string name="pk_language_settings_entry" translatable="false">language_settings_entry</string>
@@ -58,6 +69,13 @@
     <!-- Legal information -->
     <string name="pk_system_license_entry" translatable="false">system_license_entry</string>
     <string name="pk_third_party_license_entry" translatable="false">third_party_license_entry</string>
+
+    <!-- About Settings -->
+    <string name="pk_model_info" translatable="false">model_info</string>
+    <string name="pk_firmware_version" translatable="false">firmware_version</string>
+    <string name="pk_security_patch" translatable="false">security_patch</string>
+    <string name="pk_kernel_version" translatable="false">kernel_version</string>
+    <string name="pk_build_number" translatable="false">build_number</string>
 
     <!-- Reset Options -->
     <string name="pk_reset_network" translatable="false">reset_network</string>

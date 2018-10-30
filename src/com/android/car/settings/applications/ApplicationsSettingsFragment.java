@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2018 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,21 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.car.settings.display;
 
-import androidx.annotation.XmlRes;
+package com.android.car.settings.applications;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BasePreferenceFragment;
 
 /**
- * Preference fragment to host Display related preferences.
+ * Lists all installed applications and their summary.
  */
-public class DisplaySettingsFragment extends BasePreferenceFragment {
+public class ApplicationsSettingsFragment extends BasePreferenceFragment {
 
     @Override
-    @XmlRes
     protected int getPreferenceScreenResId() {
-        return R.xml.display_settings_fragment;
+        return R.xml.applications_settings_fragment;
     }
 }
