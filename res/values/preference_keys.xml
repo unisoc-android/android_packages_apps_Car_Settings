@@ -42,6 +42,15 @@
         applications_settings_screen
     </string>
 
+    <!-- Application Details -->
+    <string name="pk_application_details_app" translatable="false">application_details_app</string>
+    <string name="pk_application_details_permissions" translatable="false">
+        application_details_permissions
+    </string>
+    <string name="pk_application_details_version" translatable="false">
+        application_details_version
+    </string>
+
     <!-- DateTime Settings -->
     <string name="pk_auto_datetime_switch" translatable="false">auto_datetime_switch</string>
     <string name="pk_auto_timezone_switch" translatable="false">auto_timezone_switch</string>
@@ -59,6 +68,9 @@
     </string>
     <string name="pk_brightness_level" translatable="false">brightness_level</string>
 
+    <!-- Sound Settings -->
+    <string name="pk_volume_settings" translatable="false">volume_settings</string>
+
     <!-- Location Settings -->
     <string name="pk_location_recent_locations" translatable="false">location_recent_locations
     </string>
@@ -67,7 +79,6 @@
     <string name="pk_location_scanning" translatable="false">location_scanning</string>
     <string name="pk_location_services" translatable="false">location_services</string>
     <string name="pk_location_footer" translatable="false">location_footer</string>
-
 
     <!-- System Settings -->
     <string name="pk_language_settings_entry" translatable="false">language_settings_entry</string>
@@ -79,7 +90,8 @@
 
     <!-- Legal information -->
     <string name="pk_system_license_entry" translatable="false">system_license_entry</string>
-    <string name="pk_third_party_license_entry" translatable="false">third_party_license_entry</string>
+    <string name="pk_third_party_license_entry" translatable="false">third_party_license_entry
+    </string>
 
     <!-- About Settings -->
     <string name="pk_model_info" translatable="false">model_info</string>
