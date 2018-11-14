@@ -14,12 +14,11 @@
      limitations under the License.
 -->
 
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="test_volume_call">Call Volume</string>
-    <string name="test_volume_music">Music Volume</string>
-
-    <!-- AccountListPreferenceControllerTest and AddAccountPreferenceControllerTest -->
-    <string name="account_type1_label" translatable="false">Type 1</string>
-    <string name="account_type2_label" translatable="false">Type 2</string>
-    <string name="account_type3_label" translatable="false">Type 3</string>
-</resources>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_summary"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical|end"
+    android:textAlignment="viewEnd"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:textColor="?android:attr/textColorSecondary" />
