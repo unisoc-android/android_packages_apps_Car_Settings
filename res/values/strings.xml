@@ -42,14 +42,16 @@
     <string name="wifi_starting">Turning Wi\u2011Fi on\u2026</string>
     <!-- Summary text when turning Wi-Fi or bluetooth off -->
     <string name="wifi_stopping">Turning off Wi\u2011Fi\u2026</string>
+    <!-- Summary text when loading Wi-Fi list -->
+    <string name="loading_wifi_list">Loading Wi\u2011Fi list</string>
+    <!-- Summary text shown in place of the Wi-Fi list when wifi is off -->
+    <string name="wifi_disabled">Wi\u2011Fi disabled</string>
     <!-- Failured notification for forget -->
     <string name="wifi_failed_forget_message">Failed to forget network</string>
     <!-- Failured notification for connect -->
     <string name="wifi_failed_connect_message">Failed to connect to network</string>
     <!-- Button message shown on the button adding manual setting. Used in Wifi Setup For Setup Wizard with XL screen. -->
     <string name="wifi_setup_add_network">Add network</string>
-    <!-- Summary text when Wi-Fi is turned off -->
-    <string name="wifi_disabled">Wi\u2011Fi disabled</string>
     <!-- Button label to connect to a Wi-Fi network. Used in SetupWizard for XLarge screen [CHAR LIMIT=10] -->
     <string name="wifi_setup_connect">Connect</string>
     <!-- Label for the password of the secured network -->
@@ -189,6 +191,8 @@
 
     <!-- Language settings screen heading. [CHAR LIMIT=30] -->
     <string name="language_settings">Languages</string>
+    <!-- Title of Languages & input settings screen. [CHAR LIMIT=30] -->
+    <string name="languages_and_input_settings">Languages &amp; input</string>
 
     <!-- sound settings --><skip/>
     <!-- Sound settings screen heading -->
@@ -583,8 +587,8 @@
     <string name="security_lock_password">Password</string>
     <!--  Title for security picker to choose the unlock method: None/Pattern/PIN/Password [CHAR LIMIT=30] -->
     <string name="lock_settings_picker_title">Choose a lock type</string>
-    <!--  Button caption to open a dialog for user to choose an screen lock method: Pattern/PIN/Password [CHAR LIMIT=40] -->
-    <string name="screen_lock_options">Screen lock options</string>
+    <!--  Button caption to open a dialog for user to choose an screen lock method: Pattern/PIN/Password [CHAR LIMIT=20] -->
+    <string name="screen_lock_options">Lock options</string>
     <!--  Title for screen asking user to enter their existing lock pattern [CHAR LIMIT=30] -->
     <string name="lock_settings_enter_pattern">Enter your pattern</string>
     <!-- Security & location settings screen, change unlock pattern screen button, on bottom of screen.  After they draw a pattern and release their finger, we display the pattern so they remember.  When they are ready to draw it once again to confirm it, they press this button. -->

@@ -24,7 +24,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.BaseFragment;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.UxRestrictionsProvider;
 
@@ -52,6 +51,10 @@ public class BaseTestActivity extends FragmentActivity implements FragmentContro
      */
     @Override
     public void launchFragment(Fragment fragment) {
+        if (fragment instanceof DialogFragment) {
+            throw new IllegalArgumentException(
+                    "cannot launch dialogs with launchFragment() - use showDialog() instead");
+        }
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, fragment)
@@ -86,14 +89,6 @@ public class BaseTestActivity extends FragmentActivity implements FragmentContro
 
     public void setCarUxRestrictions(CarUxRestrictions restrictionInfo) {
         mRestrictionInfo = restrictionInfo;
-    }
-
-    public void reattachFragment(BaseFragment fragment) {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .detach(fragment)
-                .attach(fragment)
-                .commit();
     }
 
     /**

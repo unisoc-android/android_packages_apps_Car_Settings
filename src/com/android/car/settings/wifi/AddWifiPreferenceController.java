@@ -14,29 +14,42 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.users;
+package com.android.car.settings.wifi;
 
 import android.content.Context;
-import android.content.pm.UserInfo;
+import android.net.wifi.WifiManager;
+
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 
 import com.android.car.settings.common.FragmentController;
 
-/** Business logic for populating the users for the users list settings. */
-public class UsersListPreferenceController extends UsersBasePreferenceController {
+/**
+ * Controls preference for adding wifi.
+ */
+public class AddWifiPreferenceController extends WifiPreferenceControllerBase {
+    private Preference mPreference;
 
-    public UsersListPreferenceController(Context context, String preferenceKey,
+    public AddWifiPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController) {
         super(context, preferenceKey, fragmentController);
     }
 
     @Override
-    protected void userClicked(UserInfo userInfo) {
-        if (UserUtils.isAdminViewingNonAdmin(getCarUserManagerHelper(), userInfo)) {
-            // Admin viewing non admin.
-            getFragmentController().launchFragment(
-                    UserDetailsPermissionsFragment.newInstance(userInfo.id));
-        } else {
-            getFragmentController().launchFragment(UserDetailsFragment.newInstance(userInfo.id));
+    public void displayPreference(PreferenceScreen screen) {
+        super.displayPreference(screen);
+
+        mPreference = screen.findPreference(getPreferenceKey());
+    }
+
+    @Override
+    public void onWifiStateChanged(int state) {
+        switch (state) {
+            case WifiManager.WIFI_STATE_DISABLED:
+                mPreference.setVisible(false);
+                break;
+            default:
+                mPreference.setVisible(true);
         }
     }
 }
