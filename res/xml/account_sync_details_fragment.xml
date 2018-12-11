@@ -13,12 +13,15 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<!-- Namespaced with "tpk" (Test Preference Key) to avoid conflicts. -->
-<resources>
-    <!-- SettingsFragmentTest -->
-    <string name="tpk_fake_controller" translatable="false">fake_controller</string>
-    <!-- BasePreferenceFragmentTest -->
-    <string name="tpk_xml_controller" translatable="false">xml_controller</string>
-    <string name="tpk_lifecycle_controller" translatable="false">lifecycle_controller</string>
-    <string name="tpk_spy_controller" translatable="false">spy_controller</string>
-</resources>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:settings="http://schemas.android.com/apk/res-auto"
+                  android:title="@string/account_sync_title">
+    <Preference
+        android:key="@string/pk_account_details"
+        android:selectable="false"
+        settings:controller="com.android.car.settings.accounts.AccountDetailsPreferenceController"/>
+    <com.android.car.settings.common.LogicalPreferenceGroup
+        android:key="@string/pk_account_sync_details"
+        settings:controller="com.android.car.settings.accounts.AccountSyncDetailsPreferenceController"/>
+</PreferenceScreen>
