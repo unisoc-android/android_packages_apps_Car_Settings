@@ -16,18 +16,20 @@
 
 package com.android.car.settings.common;
 
-import android.annotation.Nullable;
 import android.car.drivingstate.CarUxRestrictions;
 import android.car.drivingstate.CarUxRestrictionsManager.OnUxRestrictionsChangedListener;
 import android.content.Context;
 import android.content.Intent;
-import android.net.wifi.WifiManager;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
-import android.provider.Settings;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -36,8 +38,6 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.android.car.settings.R;
-import com.android.car.settings.quicksettings.QuickSettingFragment;
-import com.android.car.settings.wifi.WifiSettingsFragment;
 import com.android.car.theme.Themes;
 
 /**
@@ -47,7 +47,12 @@ import com.android.car.theme.Themes;
 public class CarSettingActivity extends FragmentActivity implements FragmentController,
         OnUxRestrictionsChangedListener, UxRestrictionsProvider, OnBackStackChangedListener,
         PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
+    private static final Logger LOG = new Logger(CarSettingActivity.class);
 
+    public static final String META_DATA_KEY_FRAGMENT_CLASS =
+            "com.android.car.settings.FRAGMENT_CLASS";
+
+    private String mFragmentClass;
     private CarUxRestrictionsHelper mUxRestrictionsHelper;
     private View mRestrictedMessage;
     // Default to minimum restriction.
@@ -60,6 +65,8 @@ public class CarSettingActivity extends FragmentActivity implements FragmentCont
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getMetaData();
+
         setContentView(R.layout.car_setting_activity);
         if (mUxRestrictionsHelper == null) {
             mUxRestrictionsHelper = new CarUxRestrictionsHelper(/* context= */ this, /* listener= */
@@ -70,21 +77,29 @@ public class CarSettingActivity extends FragmentActivity implements FragmentCont
         mRestrictedMessage = findViewById(R.id.restricted_message);
     }
 
+    private void getMetaData() {
+        try {
+            ActivityInfo ai = getPackageManager().getActivityInfo(getComponentName(),
+                    PackageManager.GET_META_DATA);
+            if (ai == null || ai.metaData == null) return;
+            mFragmentClass = ai.metaData.getString(META_DATA_KEY_FRAGMENT_CLASS);
+        } catch (NameNotFoundException nnfe) {
+            // No recovery
+            LOG.d("Cannot get Metadata for: " + getComponentName().toString());
+        }
+    }
+
     @Override
     public void onStart() {
         super.onStart();
-        Intent intent = getIntent();
-        if (intent != null) {
-            String action = intent.getAction();
-            if (Settings.ACTION_WIFI_SETTINGS.equals(action)
-                    || WifiManager.ACTION_PICK_WIFI_NETWORK.equals(action)) {
-                launchFragment(new WifiSettingsFragment());
-                return;
-            }
+        if (!TextUtils.isEmpty(mFragmentClass)) {
+            launchFragment(Fragment.instantiate(this, mFragmentClass));
+            return;
         }
 
         if (getCurrentFragment() == null) {
-            launchFragment(new QuickSettingFragment());
+            launchFragment(Fragment.instantiate(this,
+                    getString(R.string.config_settings_hierarchy_root_fragment)));
         }
     }
 
@@ -176,8 +191,7 @@ public class CarSettingActivity extends FragmentActivity implements FragmentCont
 
     @Override
     public void onBackStackChanged() {
-        // Notify in case restrictions changed while current fragment was in back stack.
-        onUxRestrictionsChanged(mCarUxRestrictions);
+        updateBlockingView(getCurrentFragment());
     }
 
     @Override

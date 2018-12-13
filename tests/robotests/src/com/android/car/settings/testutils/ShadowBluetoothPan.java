@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright 2018 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,19 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.sound;
+package com.android.car.settings.testutils;
 
+import android.bluetooth.BluetoothPan;
+import android.bluetooth.BluetoothProfile;
+import android.content.Context;
 
-import androidx.annotation.XmlRes;
+import org.robolectric.annotation.Implementation;
+import org.robolectric.annotation.Implements;
 
-import com.android.car.settings.R;
-import com.android.car.settings.common.SettingsFragment;
-
-/** Fragment which shows the settings for sounds. */
-public class SoundSettingsFragment extends SettingsFragment {
-
-    @Override
-    @XmlRes
-    protected int getPreferenceScreenResId() {
-        return R.xml.sound_settings_fragment;
+@Implements(BluetoothPan.class)
+public class ShadowBluetoothPan {
+    @Implementation
+    public void __constructor__(Context context, BluetoothProfile.ServiceListener l) {
+        // Do nothing. Implemented to avoid NullPointerException in BluetoothPan.
     }
 }
