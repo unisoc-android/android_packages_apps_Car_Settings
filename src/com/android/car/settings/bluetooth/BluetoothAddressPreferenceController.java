@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright 2018 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,24 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.system;
+package com.android.car.settings.bluetooth;
 
+import android.bluetooth.BluetoothAdapter;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
-import android.os.Build;
 
 import androidx.preference.Preference;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
-import com.android.car.settings.common.PreferenceController;
 
-/** Updates the about settings entry summary with the build version. */
-public class AboutSettingsEntryPreferenceController extends PreferenceController<Preference> {
+/**
+ * Displays the Bluetooth MAC address of the vehicle.
+ */
+public class BluetoothAddressPreferenceController extends
+        BluetoothPreferenceController<Preference> {
 
-    public AboutSettingsEntryPreferenceController(Context context, String preferenceKey,
+    public BluetoothAddressPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
     }
@@ -41,7 +43,9 @@ public class AboutSettingsEntryPreferenceController extends PreferenceController
 
     @Override
     protected void updateState(Preference preference) {
-        preference.setSummary(
-                getContext().getString(R.string.about_summary, Build.VERSION.RELEASE));
+        String address = BluetoothAdapter.getDefaultAdapter().getAddress();
+        String formattedAddress = getContext().getString(R.string.bluetooth_vehicle_mac_address,
+                address);
+        preference.setTitle(formattedAddress);
     }
 }

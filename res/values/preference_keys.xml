@@ -96,6 +96,9 @@
 
     <!-- Sound Settings -->
     <string name="pk_volume_settings" translatable="false">volume_settings</string>
+    <string name="pk_default_ringtone" translatable="false">default_ringtone</string>
+    <string name="pk_default_notification" translatable="false">default_notification</string>
+    <string name="pk_default_alarm" translatable="false">default_alarm</string>
 
     <!-- Location Settings -->
     <string name="pk_location_recent_requests_entry" translatable="false">
@@ -127,6 +130,7 @@
     <string name="pk_pin_lock" translatable="false">pin_lock</string>
 
     <!-- System Settings -->
+    <string name="pk_languages_and_input_settings" translatable="false">languages_and_input_settings</string>
     <string name="pk_system_update_settings" translatable="false">system_update_settings</string>
     <string name="pk_system_extra_settings" translatable="false">system_extra_settings</string>
     <string name="pk_about_settings_entry" translatable="false">about_settings_entry</string>
@@ -163,4 +167,7 @@
     <string name="pk_reset_esim" translatable="false">reset_esim</string>
     <string name="pk_reset_network_subscription" translatable="false">reset_network_subscription
     </string>
+
+    <!-- Developer Options -->
+    <string name="pk_usb_debugging_toggle" translatable="false">usb_debugging_toggle</string>
 </resources>

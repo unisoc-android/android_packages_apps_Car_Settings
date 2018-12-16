@@ -16,7 +16,6 @@
 
 package com.android.car.settings.sound;
 
-
 import androidx.annotation.XmlRes;
 
 import com.android.car.settings.R;

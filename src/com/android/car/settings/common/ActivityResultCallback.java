@@ -14,18 +14,22 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.system;
+package com.android.car.settings.common;
 
-import com.android.car.settings.R;
-import com.android.car.settings.common.SettingsFragment;
+import android.content.Intent;
+
+import androidx.annotation.Nullable;
 
 /**
- * Shows basic info about the system and provide some actions like update, reset etc.
+ * Handles activity results after a {@link FragmentController} fires {@link
+ * FragmentController#startActivityForResult(Intent, int, ActivityResultCallback)}.
  */
-public class SystemSettingsFragment extends SettingsFragment {
+public interface ActivityResultCallback {
 
-    @Override
-    protected int getPreferenceScreenResId() {
-        return R.xml.system_settings_fragment;
-    }
+    /**
+     * Callback used when an activity started by
+     * {@link FragmentController#startActivityForResult(Intent,
+     * int, ActivityResultCallback)} receives a result.
+     */
+    void processActivityResult(int requestCode, int resultCode, @Nullable Intent data);
 }
