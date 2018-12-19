@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright 2018 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,24 +14,23 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.applications;
+package com.android.car.settings.bluetooth;
 
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
-import android.content.pm.PackageInfo;
 
 import androidx.preference.Preference;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
-import com.android.car.settings.common.PreferenceController;
 
-/** Business logic for the Version field in the application details page. */
-public class VersionPreferenceController extends PreferenceController<Preference> {
+/**
+ * Displays the Bluetooth MAC address of a remote device.
+ */
+public class BluetoothDeviceAddressPreferenceController extends
+        BluetoothDevicePreferenceController<Preference> {
 
-    private PackageInfo mPackageInfo;
-
-    public VersionPreferenceController(Context context, String preferenceKey,
+    public BluetoothDeviceAddressPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
     }
@@ -41,22 +40,10 @@ public class VersionPreferenceController extends PreferenceController<Preference
         return Preference.class;
     }
 
-    /** Set the package info which is used to get the version name. */
-    public void setPackageInfo(PackageInfo packageInfo) {
-        mPackageInfo = packageInfo;
-    }
-
-    @Override
-    protected void checkInitialized() {
-        if (mPackageInfo == null) {
-            throw new IllegalStateException(
-                    "PackageInfo should be set before calling this function");
-        }
-    }
-
     @Override
     protected void updateState(Preference preference) {
-        preference.setTitle(getContext().getString(
-                R.string.application_version_label, mPackageInfo.versionName));
+        String address = getContext().getString(R.string.bluetooth_device_mac_address,
+                getCachedDevice().getAddress());
+        preference.setTitle(address);
     }
 }
