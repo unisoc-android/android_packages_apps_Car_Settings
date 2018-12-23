@@ -30,14 +30,17 @@ import androidx.preference.Preference;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
 import com.android.car.settings.common.PreferenceControllerTestHelper;
+import com.android.car.settings.testutils.ShadowRuntimePermissionPresenter;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowApplication;
 
 @RunWith(CarSettingsRobolectricTestRunner.class)
+@Config(shadows = {ShadowRuntimePermissionPresenter.class})
 public class PermissionsPreferenceControllerTest {
 
     private static final String PACKAGE_NAME = "Test Package Name";
@@ -45,7 +48,7 @@ public class PermissionsPreferenceControllerTest {
     private Context mContext;
     private Preference mPreference;
     private PreferenceControllerTestHelper<PermissionsPreferenceController>
-            mPreferenceControllerHelper;
+        mPreferenceControllerHelper;
     private PermissionsPreferenceController mController;
     private ResolveInfo mResolveInfo;
 
@@ -54,7 +57,7 @@ public class PermissionsPreferenceControllerTest {
         mContext = RuntimeEnvironment.application;
 
         mPreferenceControllerHelper = new PreferenceControllerTestHelper<>(mContext,
-                PermissionsPreferenceController.class);
+            PermissionsPreferenceController.class);
         mController = mPreferenceControllerHelper.getController();
         mPreference = new Preference(mContext);
 
@@ -67,7 +70,7 @@ public class PermissionsPreferenceControllerTest {
     @Test
     public void testCheckInitialized_noResolveInfo_throwException() {
         assertThrows(IllegalStateException.class,
-                () -> mPreferenceControllerHelper.setPreference(mPreference));
+            () -> mPreferenceControllerHelper.setPreference(mPreference));
     }
 
     @Test

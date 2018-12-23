@@ -208,7 +208,7 @@
     <string name="alarm_volume_title">Alarm</string>
     <!-- Sound settings screen, title for the option defining the phone ringtone. [CHAR LIMIT=30] -->
     <string name="ringtone_title">Phone ringtone</string>
-    <!-- Sound settings screen, title for the option defining the default notification sound. [CHAR LIMIT=30] -->
+    <!-- Sound settings screen, title for the option defining the default notification sound. [CHAR LIMIT=40] -->
     <string name="notification_ringtone_title">Default notification sound</string>
     <!-- Sound settings screen, title for the option defining the default alarm sound. [CHAR LIMIT=30] -->
     <string name="alarm_ringtone_title">Default alarm sound</string>
@@ -561,6 +561,18 @@
     <string name="account_list_title">Accounts for
         <xliff:g id="current_user_name">%1$s</xliff:g>
     </string>
+    <!-- Switch label to enable auto sync account [CHAR LIMIT=60] -->
+    <string name="account_auto_sync_title">Automatically sync data</string>
+    <!-- Switch summary to enable auto sync account [CHAR LIMIT=60] -->
+    <string name="account_auto_sync_summary">Let apps refresh data automatically</string>
+    <!--  Title of dialog shown when user enables global auto sync [CHAR LIMIT=32] -->
+    <string name="data_usage_auto_sync_on_dialog_title">Turn auto-sync data on?</string>
+    <!--  Body of dialog shown when user enables global auto sync [CHAR LIMIT=NONE] -->
+    <string name="data_usage_auto_sync_on_dialog">Any changes you make to your accounts on the web will be automatically copied to your device.\n\nSome accounts may also automatically copy any changes you make on the phone to the web. A Google Account works this way.</string>
+    <!--  Title of dialog shown when user disables global auto sync [CHAR LIMIT=32] -->
+    <string name="data_usage_auto_sync_off_dialog_title">Turn auto-sync data off?</string>
+    <!--  Body of dialog shown when user disables global auto sync [CHAR LIMIT=NONE] -->
+    <string name="data_usage_auto_sync_off_dialog">This will conserve data, but you\u2019ll need to sync each account manually to collect recent information. And you won\u2019t receive notifications when updates occur.</string>
     <!-- Account details in Settings screen title [CHAR LIMIT=25] -->
     <string name="account_details_title">Account info</string>
     <!-- Account details in Settings screen title [CHAR LIMIT=25] -->
@@ -783,6 +795,10 @@
     <!-- generic --><skip/>
     <!-- Button label for generic forget action [CHAR LIMIT=20] -->
     <string name="forget">Forget</string>
+    <!-- Button label for generic connect action [CHAR LIMIT=20] -->
+    <string name="connect">Connect</string>
+    <!-- Button label for generic disconnect action [CHAR LIMIT=20] -->
+    <string name="disconnect">Disconnect</string>
     <!-- Delete button text [CHAR LIMIT=20] -->
     <string name="delete_button">Delete</string>
     <!-- Remove button text [CHAR LIMIT=20] -->

@@ -14,37 +14,28 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.accounts;
+package com.android.car.settings.language;
 
 import android.content.Context;
 
-import androidx.preference.PreferenceScreen;
-
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.NoSetupPreferenceController;
+import com.android.car.settingslib.language.LanguagePickerUtils;
+import com.android.internal.app.LocaleHelper;
 
-/**
- * Controller which sets the title of the AccountDetailsFragment.
- */
-public class AccountDetailsTitlePreferenceController extends NoSetupPreferenceController {
-    private CharSequence mTitle;
+import java.util.Locale;
 
-    public AccountDetailsTitlePreferenceController(Context context, String preferenceKey,
+/** Updates the language settings entry summary with the currently configured locale. */
+public class LanguageSettingsEntryPreferenceController extends NoSetupPreferenceController {
+
+    public LanguageSettingsEntryPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController) {
         super(context, preferenceKey, fragmentController);
     }
 
-    /** Sets the title that will be displayed on the screen. */
-    public void setTitle(CharSequence title) {
-        mTitle = title;
-    }
-
     @Override
-    public void displayPreference(PreferenceScreen screen) {
-        super.displayPreference(screen);
-
-        if (mTitle != null) {
-            screen.setTitle(mTitle);
-        }
+    public CharSequence getSummary() {
+        Locale locale = LanguagePickerUtils.getConfiguredLocale();
+        return LocaleHelper.getDisplayName(locale, locale, /* sentenceCase= */ true);
     }
 }

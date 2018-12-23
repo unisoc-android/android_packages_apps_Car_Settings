@@ -115,7 +115,7 @@ public class DeveloperOptionsFragmentTest {
         Switch onOffSwitch = mTestActivity.findViewById(R.id.toggle_switch);
         onOffSwitch.setChecked(true);
 
-        assertThat(mDeveloperOptionsFragment.getFragmentController().findDialogByTag(
+        assertThat(mDeveloperOptionsFragment.findDialogByTag(
                 EnableDeveloperSettingsWarningDialog.TAG)).isNotNull();
     }
 
@@ -126,7 +126,7 @@ public class DeveloperOptionsFragmentTest {
         mTestActivity.launchFragment(mDeveloperOptionsFragment);
         Switch onOffSwitch = mTestActivity.findViewById(R.id.toggle_switch);
         onOffSwitch.setChecked(true);
-        DialogFragment dialog = mDeveloperOptionsFragment.getFragmentController().findDialogByTag(
+        DialogFragment dialog = mDeveloperOptionsFragment.findDialogByTag(
                 EnableDeveloperSettingsWarningDialog.TAG);
 
         DialogTestUtils.clickPositiveButton(dialog);
@@ -137,10 +137,12 @@ public class DeveloperOptionsFragmentTest {
 
     @Test
     public void testDialogListener_negativeClick_switchOff() {
+        Settings.Global.putInt(mContext.getContentResolver(),
+                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0);
         mTestActivity.launchFragment(mDeveloperOptionsFragment);
         Switch onOffSwitch = mTestActivity.findViewById(R.id.toggle_switch);
         onOffSwitch.setChecked(true);
-        DialogFragment dialog = mDeveloperOptionsFragment.getFragmentController().findDialogByTag(
+        DialogFragment dialog = mDeveloperOptionsFragment.findDialogByTag(
                 EnableDeveloperSettingsWarningDialog.TAG);
 
         DialogTestUtils.clickNegativeButton(dialog);
