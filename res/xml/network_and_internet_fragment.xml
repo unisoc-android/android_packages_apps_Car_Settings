@@ -15,7 +15,14 @@
     limitations under the License.
 -->
 
-<animated-rotate xmlns:android="http://schemas.android.com/apk/res/android"
-                 android:drawable="@drawable/ic_sync_anim_holo"
-                 android:pivotX="50%"
-                 android:pivotY="50%"/>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/network_and_internet">
+    <com.android.car.settings.common.MasterSwitchPreference
+        android:fragment="com.android.car.settings.wifi.WifiSettingsFragment"
+        android:icon="@drawable/ic_settings_wifi"
+        android:key="@string/pk_wifi_settings_entry"
+        android:title="@string/wifi_settings"
+        settings:controller="com.android.car.settings.wifi.WifiEntryPreferenceController"/>
+</PreferenceScreen>
