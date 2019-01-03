@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright (C) 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,19 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.testutils;
+package com.android.car.settings.network;
 
-import androidx.annotation.LayoutRes;
+import androidx.annotation.XmlRes;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.BaseFragment;
+import com.android.car.settings.common.SettingsFragment;
 
-/**
- * Simple implementation of BaseFragment to be used in tests that require a fragment but don't care
- * which fragment is being used.
- */
-public class TestBaseFragment extends BaseFragment {
+/** Mobile network settings homepage. */
+public class MobileNetworkFragment extends SettingsFragment {
 
     @Override
-    @LayoutRes
-    protected int getLayoutId() {
-        return R.layout.list_fragment;
+    @XmlRes
+    protected int getPreferenceScreenResId() {
+        return R.xml.mobile_network_fragment;
     }
 }
