@@ -43,6 +43,8 @@
 
     <!-- Network -->
     <string name="pk_mobile_network_settings_entry" translatable="false">mobile_network_settings_entry</string>
+    <string name="pk_mobile_data_toggle" translatable="false">mobile_data_toggle</string>
+    <string name="pk_data_usage_settings_entry" translatable="false">data_usage_settings_entry</string>
 
     <!-- WIFI -->
     <string name="pk_wifi_settings_entry" translatable="false">wifi_settings_entry</string>
@@ -151,6 +153,9 @@
     <string name="pk_pattern_lock" translatable="false">pattern_lock</string>
     <string name="pk_password_lock" translatable="false">password_lock</string>
     <string name="pk_pin_lock" translatable="false">pin_lock</string>
+    <string name="pk_choose_lock_type" translatable="false">choose_lock_type</string>
+    <string name="pk_trusted_device" translatable="false">trusted_device</string>
+    <string name="pk_add_trusted_device" translatable="false">add_trusted_device</string>
 
     <!-- System Settings -->
     <string name="pk_languages_and_input_settings" translatable="false">

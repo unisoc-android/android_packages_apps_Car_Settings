@@ -18,11 +18,13 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="oval">
-            <solid android:color="@color/google_blue_600"/>
+            <solid android:color="@color/car_user_switcher_add_user_background_color"/>
             <size
-                android:width="@dimen/primary_icon_size"
-                android:height="@dimen/primary_icon_size"/>
+                android:width="@dimen/car_user_switcher_image_avatar_size"
+                android:height="@dimen/car_user_switcher_image_avatar_size"/>
         </shape>
     </item>
-    <item android:drawable="@drawable/ic_arrow_forward"/>
+    <item
+        android:drawable="@drawable/ic_user_add"
+        android:gravity="center"/>
 </layer-list>

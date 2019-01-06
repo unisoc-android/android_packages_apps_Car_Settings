@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright 2018 The Android Open Source Project
+    Copyright 2019 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -15,14 +15,6 @@
     limitations under the License.
 -->
 
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <shape android:shape="oval">
-            <solid android:color="@color/google_blue_600"/>
-            <size
-                android:width="@dimen/primary_icon_size"
-                android:height="@dimen/primary_icon_size"/>
-        </shape>
-    </item>
-    <item android:drawable="@drawable/ic_check"/>
-</layer-list>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/data_usage_settings"/>

@@ -39,6 +39,15 @@
     <string name="network_and_internet">Network &amp; internet</string>
     <!-- Mobile network settings [CHAR LIMIT=30] -->
     <string name="mobile_network_settings">Mobile network</string>
+    <!-- Mobile network screen, toggle mobile data title [CHAR LIMIT=30] -->
+    <string name="mobile_network_toggle_title">Mobile data</string>
+    <!-- Mobile network screen, toggle mobile data summary [CHAR LIMIT=50] -->
+    <string name="mobile_network_toggle_summary">Access data using mobile network</string>
+    <!-- Mobile network screen, confirmation dialog to turn off mobile data [CHAR LIMIT=50] -->
+    <string name="confirm_mobile_data_disable">Turn off mobile data?</string>
+    <!-- Data usage settings [CHAR LIMIT=30] -->
+    <string name="data_usage_settings">Data usage</string>
+
     <!-- wifi settings--><skip/>
     <!-- Used in the 1st-level settings screen to go to the 2nd-level settings screen  [CHAR LIMIT=20]-->
     <string name="wifi_settings">Wi\u2011Fi</string>
@@ -789,6 +798,14 @@
     <!-- Format of the message displayed at the bottom of the quick settings page, that shows build information in
          user-debug and eng builds. -->
     <string name="build_info_fmt"><xliff:g example="google/gcar_emu_x86/..." id="fingerprint">%1$s</xliff:g>\n<xliff:g example="Thu Aug 30" id="date">%2$s</xliff:g> : <xliff:g example="4" id="num_days">%3$s</xliff:g> days ago</string>
+
+    <!-- security trusted device --><skip/>
+    <!-- Label for button to add a trusted device [CHAR LIMIT=30] -->
+    <string name="add_device_title">Add trusted device</string>
+    <!-- Screen title and label for button of trusted device [CHAR LIMIT=20]> -->
+    <string name="trusted_device">Trusted devices</string>
+    <!-- Subtitle of trusted device button in security page [CHAR LIMIT=20]-->
+    <string name="trusted_device_subtitle">Device security</string>
 
     <!-- generic --><skip/>
     <!-- Button label for generic forget action [CHAR LIMIT=20] -->
