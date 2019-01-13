@@ -65,6 +65,8 @@
     <string name="pk_add_wifi_security_group" translatable="false">add_wifi_security_group</string>
     <string name="pk_add_wifi_security" translatable="false">add_wifi_security</string>
     <string name="pk_add_wifi_password" translatable="false">add_wifi_password</string>
+    <string name="pk_wifi_preferences" translatable="false">wifi_preferences</string>
+    <string name="pk_wifi_cellular_fallback" translatable="false">wifi_cellular_fallback</string>
 
     <!-- Bluetooth -->
     <string name="pk_bluetooth_paired_devices" translatable="false">bluetooth_paired_devices
@@ -175,6 +177,11 @@
     <string name="pk_add_language" translatable="false">add_language</string>
     <string name="pk_language_picker" translatable="false">language_picker</string>
     <string name="pk_child_locale_picker" translatable="false">child_locale_picker</string>
+
+    <!-- TTS Settings -->
+    <string name="pk_tts_settings_entry" translatable="false">tts_settings_entry</string>
+    <string name="pk_tts_preferred_engine_entry" translatable="false">tts_preferred_engine_entry</string>
+    <string name="pk_tts_preferred_engine_options" translatable="false">tts_preferred_engine_options</string>
 
     <!-- Legal information -->
     <string name="pk_system_license_entry" translatable="false">system_license_entry</string>
