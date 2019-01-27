@@ -30,7 +30,8 @@
     <string name="pk_bluetooth_settings_entry" translatable="false">bluetooth_settings_entry
     </string>
     <string name="pk_location_settings_entry" translatable="false">location_settings_entry</string>
-    <string name="pk_applications_settings_entry" translatable="false">applications_settings_entry
+    <string name="pk_apps_and_notifications_settings_entry" translatable="false">
+        apps_and_notifications_settings_entry
     </string>
     <string name="pk_date_time_settings_entry" translatable="false">date_time_settings_entry
     </string>
@@ -84,6 +85,14 @@
     <string name="pk_bluetooth_device_address" translatable="false">bluetooth_device_address
     </string>
 
+    <!-- Applications and Notifications Settings -->
+    <string name="pk_applications_settings_screen_entry" translatable="false">
+        applications_settings_screen_entry
+    </string>
+    <string name="pk_default_applications_settings_entry" translatable="false">
+        default_applications_entry
+    </string>
+
     <!-- Applications Settings -->
     <string name="pk_applications_settings_screen" translatable="false">
         applications_settings_screen
@@ -96,6 +105,10 @@
     </string>
     <string name="pk_application_details_version" translatable="false">
         application_details_version
+    </string>
+
+    <!-- Default apps Settings -->
+    <string name="pk_default_assist_and_voice" translatable="false">default_assist_and_voice
     </string>
 
     <!-- DateTime Settings -->
@@ -111,6 +124,7 @@
 
     <!-- Accounts -->
     <string name="pk_account_list" translatable="false">account_list</string>
+    <string name="pk_account_settings" translatable="false">pk_account_settings</string>
     <string name="pk_account_auto_sync" translatable="false">account_auto_sync</string>
     <string name="pk_add_account" translatable="false">add_account</string>
     <string name="pk_account_details" translatable="false">account_details</string>
@@ -160,6 +174,7 @@
     <string name="pk_choose_lock_type" translatable="false">choose_lock_type</string>
     <string name="pk_trusted_device" translatable="false">trusted_device</string>
     <string name="pk_add_trusted_device" translatable="false">add_trusted_device</string>
+    <string name="pk_trusted_device_list" translatable="false">trusted_device_list</string>
 
     <!-- System Settings -->
     <string name="pk_languages_and_input_settings" translatable="false">
