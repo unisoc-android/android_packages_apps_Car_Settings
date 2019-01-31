@@ -15,6 +15,15 @@
     limitations under the License.
 -->
 
-<PreferenceScreen
+<vector
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/data_usage_settings"/>
+    android:width="@dimen/icon_size"
+    android:height="@dimen/icon_size"
+    android:viewportHeight="48"
+    android:viewportWidth="48">
+    <path
+        android:fillColor="?attr/iconColor"
+        android:pathData="M24,4C12.95,4,4,12.95,4,24
+                         s8.95,20,20,20,20-8.95,20-20
+                         S35.05,4,24,4zm10,22H14v-4h20v4z"/>
+</vector>
