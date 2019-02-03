@@ -19,11 +19,6 @@ package com.android.car.settings.applications.defaultapps;
 import android.car.drivingstate.CarUxRestrictions;
 import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.VectorDrawable;
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
@@ -49,6 +44,7 @@ public abstract class DefaultAppsPickerBasePreferenceController extends
 
     private static final Logger LOG = new Logger(DefaultAppsPickerBasePreferenceController.class);
     private static final String DIALOG_KEY_ARG = "key_arg";
+    protected static final String NONE_PREFERENCE_KEY = "";
 
     private final CarUserManagerHelper mCarUserManagerHelper;
     private final Map<String, DefaultAppInfo> mDefaultAppInfoMap = new HashMap<>();
@@ -104,8 +100,7 @@ public abstract class DefaultAppsPickerBasePreferenceController extends
             Preference preference = preferenceGroup.getPreference(i);
             String newPreferenceSummary = TextUtils.equals(preference.getKey(),
                     getCurrentDefaultKey()) ? getContext().getString(
-                    R.string.default_app_selected_app)
-                    : "";
+                    R.string.default_app_selected_app) : "";
             preference.setSummary(newPreferenceSummary);
         }
     }
@@ -140,7 +135,7 @@ public abstract class DefaultAppsPickerBasePreferenceController extends
         preference.setKey(info.getKey());
         preference.setEnabled(info.enabled);
         preference.setOnPreferenceClickListener(this);
-        setSafeIcon(preference, info.loadIcon(),
+        DefaultAppUtils.setSafeIcon(preference, info.loadIcon(),
                 getContext().getResources().getInteger(R.integer.default_app_safe_icon_size));
     }
 
@@ -173,7 +168,7 @@ public abstract class DefaultAppsPickerBasePreferenceController extends
 
     private Preference createNonePreference() {
         Preference nonePreference = new Preference(getContext());
-        nonePreference.setKey("");
+        nonePreference.setKey(NONE_PREFERENCE_KEY);
         nonePreference.setTitle(R.string.app_list_preference_none);
         nonePreference.setOnPreferenceClickListener(this);
         nonePreference.setIcon(R.drawable.ic_remove_circle);
@@ -199,50 +194,5 @@ public abstract class DefaultAppsPickerBasePreferenceController extends
             }
         }
         return keys.isEmpty();
-    }
-
-    /**
-     * Sets the preference icon with a drawable that is scaled down to to avoid crashing Settings if
-     * it's too big.
-     */
-    private static void setSafeIcon(Preference pref, Drawable icon, int maxDimension) {
-        Drawable safeIcon = icon;
-        if ((icon != null) && !(icon instanceof VectorDrawable)) {
-            safeIcon = getSafeDrawable(icon, maxDimension);
-        }
-        pref.setIcon(safeIcon);
-    }
-
-    /**
-     * Gets a drawable with a limited size to avoid crashing Settings if it's too big.
-     *
-     * @param original     original drawable, typically an app icon.
-     * @param maxDimension maximum width/height, in pixels.
-     */
-    private static Drawable getSafeDrawable(Drawable original, int maxDimension) {
-        int actualWidth = original.getMinimumWidth();
-        int actualHeight = original.getMinimumHeight();
-
-        if (actualWidth <= maxDimension && actualHeight <= maxDimension) {
-            return original;
-        }
-
-        float scaleWidth = ((float) maxDimension) / actualWidth;
-        float scaleHeight = ((float) maxDimension) / actualHeight;
-        float scale = Math.min(scaleWidth, scaleHeight);
-        int width = (int) (actualWidth * scale);
-        int height = (int) (actualHeight * scale);
-
-        Bitmap bitmap;
-        if (original instanceof BitmapDrawable) {
-            bitmap = Bitmap.createScaledBitmap(((BitmapDrawable) original).getBitmap(), width,
-                    height, false);
-        } else {
-            bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(bitmap);
-            original.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-            original.draw(canvas);
-        }
-        return new BitmapDrawable(null, bitmap);
     }
 }
