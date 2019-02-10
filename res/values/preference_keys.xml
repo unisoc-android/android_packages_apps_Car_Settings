@@ -219,7 +219,7 @@
     <string name="pk_keyboard_entry" translatable="false">keyboard_entry</string>
     <string name="pk_enabled_keyboards" translatable="false">enabled_keyboards</string>
     <string name="pk_manage_keyboard" translatable="false">manage_keyboard</string>
-    <string name="pk_available_keyboards" translatable="false">available_keyboards</string>
+    <string name="pk_keyboard_management" translatable="false">keyboard_management</string>
 
     <!-- TTS Settings -->
     <string name="pk_tts_settings_entry" translatable="false">tts_settings_entry</string>
@@ -252,6 +252,17 @@
     <string name="pk_reset_network_items" translatable="false">reset_network_items</string>
     <string name="pk_reset_esim" translatable="false">reset_esim</string>
     <string name="pk_reset_network_subscription" translatable="false">reset_network_subscription
+    </string>
+
+    <!-- Master Clear -->
+    <string name="pk_master_clear_desc" translatable="false">master_clear_desc</string>
+    <string name="pk_master_clear_account_list" translatable="false">master_clear_account_list
+    </string>
+    <string name="pk_master_clear_other_users_present" translatable="false">
+        master_clear_other_users_present
+    </string>
+    <string name="pk_master_clear_reset_esim" translatable="false">master_clear_reset_esim</string>
+    <string name="pk_master_clear_confirm_desc" translatable="false">master_clear_confirm_desc
     </string>
 
     <!-- Developer Options -->
