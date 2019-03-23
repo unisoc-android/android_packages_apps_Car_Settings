@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright 2018 The Android Open Source Project
+    Copyright (C) 2019 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -14,11 +13,12 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
-<com.android.car.settings.users.UserGridRecyclerView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/user_grid"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical"
-    android:background="?attr/userSwitcherBackground"/>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="@dimen/icon_size"
+        android:height="@dimen/icon_size"
+        android:viewportWidth="24.0"
+        android:viewportHeight="24.0">
+    <path
+        android:fillColor="?attr/iconColor"
+        android:pathData="M3,20h18v-4H3V20zM5,17h2v2H5V17zM3,4v4h18V4H3zM7,7H5V5h2V7zM3,14h18v-4H3V14zM5,11h2v2H5V11z"/>
+</vector>
