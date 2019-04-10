@@ -45,6 +45,7 @@ public class StorageMediaCategoryDetailPreferenceControllerTest {
     private static final long EXTRA_AUDIO_BYTES = 100;
     private static final String LABEL = "label";
     private static final String SIZE_STR = "12.34 MB";
+    private static final String PACKAGE_NAME = "com.google.packageName";
 
     private Context mContext;
     private LogicalPreferenceGroup mLogicalPreferenceGroup;
@@ -79,20 +80,20 @@ public class StorageMediaCategoryDetailPreferenceControllerTest {
         appEntry.label = LABEL;
         appEntry.sizeStr = SIZE_STR;
         appEntry.icon = mContext.getDrawable(R.drawable.test_icon);
+        appEntry.info.packageName = PACKAGE_NAME;
         apps.add(appEntry);
 
         mController.setExternalAudioBytes(EXTRA_AUDIO_BYTES);
         mController.onDataLoaded(apps);
+        // even when the manager notifies the controller again on data loaded the preference
+        // count should remain the same if new appEntries are not added.
+        mController.onDataLoaded(apps);
 
         assertThat(mLogicalPreferenceGroup.getPreferenceCount()).isEqualTo(2);
 
-        assertThat(mLogicalPreferenceGroup.getPreference(0).getIcon()).isEqualTo(
-                mContext.getDrawable(R.drawable.test_icon));
         assertThat(mLogicalPreferenceGroup.getPreference(0).getTitle()).isEqualTo(LABEL);
         assertThat(mLogicalPreferenceGroup.getPreference(0).getSummary()).isEqualTo(SIZE_STR);
 
-        assertThat(mLogicalPreferenceGroup.getPreference(1).getIcon()).isEqualTo(
-                mContext.getDrawable(R.drawable.ic_headset));
         assertThat(mLogicalPreferenceGroup.getPreference(1).getTitle()).isEqualTo(
                 mContext.getString(R.string.storage_audio_files_title));
         assertThat(mLogicalPreferenceGroup.getPreference(1).getSummary()).isEqualTo(
