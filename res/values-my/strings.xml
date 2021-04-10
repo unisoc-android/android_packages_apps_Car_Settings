@@ -656,4 +656,5 @@
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"ပယ်ရန်"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"ကားမောင်းနေစဉ် ဝန်ဆောင်မှု မရနိုင်ပါ။"</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"ကားမောင်းနေစဉ် အသုံးပြုသူကို ထည့်၍မရပါ။"</string>
+    <string name="autofill_confirmation_message">"&lt;b&gt;သင်သည် ဤအက်ပ်ကို ယုံကြည်စိတ်ချရပါကြောင်း သေချာပါစေ&lt;/b&gt; &lt;br/&gt; &lt;br/&gt; <xliff:g id="app_name example=Google Autofill">%1$s</xliff:g> သည် သင်၏မျက်နှာပြင်ပေါ်ရှိ အရာများကို အသုံးပြု၍ မည်သည့်အရာများကို အော်တိုဖြည့်နိုင်ကြောင်း ဆုံးဖြတ်သည်။"</string>
 </resources>

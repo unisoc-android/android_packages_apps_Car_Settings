@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<string name="settings_label">"Configurações"</string>
+<string name="more_settings_label">"Mais"</string>
+<string name="display_settings">"Tela"</string>
+<string name="brightness">"Nível de brilho"</string>
+<string name="auto_brightness_title">"Brilho adaptável"</string>
+<string name="auto_brightness_summary">"Otimizar nível de brilho de acordo com a luz disponível"</string>
+<string name="condition_night_display_title">"Luz noturna acesa"</string>
+<string name="keywords_display">"tela, touchscreen"</string>
+<string name="keywords_display_brightness_level">"escurecer tela, touchscreen, bateria"</string>
+<string name="keywords_display_auto_brightness">"escurecer tela, touchscreen, bateria"</string>
+<string name="keywords_display_night_display">"regular tela, noite, tonalidade"</string>
+<string name="night_mode_tile_label">"Modo noite"</string>
+<string name="network_and_internet">"Rede e internet"</string>
+<string name="mobile_network_settings">"Rede móvel"</string>
+<plurals name="mobile_network_summary_count">
+<item quantity="one">"<xliff:g id="COUNT_1">%1$d</xliff:g> chip"</item>
+<item quantity="other">"<xliff:g id="COUNT_1">%1$d</xliff:g> chips"</item>
+</plurals>
+<string name="mobile_network_active_sim">"Ativo/chip"</string>
+<string name="mobile_network_inactive_sim">"Inativo/chip"</string>
+<string name="mobile_network_active_esim">"Chip ativo/transferido por download"</string>
+<string name="mobile_network_inactive_esim">"Chip inativo/transferido por download"</string>
+<string name="mobile_network_list_add_more">"Adicionar mais"</string>
+<string name="mobile_network_toggle_title">"Dados móveis"</string>
+<string name="mobile_network_toggle_summary">"Acessar dados usando a rede móvel"</string>
+<string name="confirm_mobile_data_disable">"Desativar os dados móveis?"</string>
+<string name="sim_selection_required_pref">"Seleção necessária"</string>
+<string name="sim_change_data_title">" Usar a <xliff:g id="carrier" example="Google Fi">%1$s</xliff:g> para dados móveis? "</string>
+<string name="sim_change_data_message">" Você está utilizando a <xliff:g id="carrier2" example="Google Fi">%2$s</xliff:g> para dados móveis. Se você mudar para a <xliff:g id="carrier1" example="Verizon">%1$s</xliff:g>, a <xliff:g id="carrier2" example="Google Fi">%2$s</xliff:g> não será mais usada para dados móveis. "</string>
+<string name="sim_change_data_ok">"Usar <xliff:g id="CARRIER">%1$s</xliff:g>"</string>
+<string name="roaming_title">"Roaming"</string>
+<string name="roaming_summary">"Conectar aos serviços de dados quando estiver em roaming"</string>
+<string name="roaming_alert_title">"Permitir roaming de dados?"</string>
+<string name="roaming_warning">"Podem incorrer em despesas significantes."</string>
+<string name="data_usage_settings">"Uso de dados"</string>
+<string name="data_usage_title">"Dados primários"</string>
+<string name="data_used_formatted">"<xliff:g id="ID_1">^1</xliff:g> <xliff:g id="ID_2">^2</xliff:g> usados"</string>
+<string name="cell_data_warning">"Alerta de uso de dados em <xliff:g id="ID_1">^1</xliff:g>"</string>
+<string name="cell_data_limit">"Limite de dados em <xliff:g id="ID_1">^1</xliff:g>"</string>
+<string name="cell_data_warning_and_limit">"Alerta de uso de dados em <xliff:g id="ID_1">^1</xliff:g> / Limite de dados em <xliff:g id="ID_2">^2</xliff:g>"</string>
+<plurals name="billing_cycle_days_left">
+<item quantity="one">"%d dia restante"</item>
+<item quantity="other">"%d dias restantes"</item>
+</plurals>
+<string name="billing_cycle_none_left">"Não há tempo restante"</string>
+<string name="billing_cycle_less_than_one_day_left">"Resta menos de um dia"</string>
+<string name="carrier_and_update_text">"Atualizado por <xliff:g name="carrier" example="Google Fi">^1</xliff:g> há <xliff:g name="time" example="3m">^2</xliff:g>"</string>
+<string name="no_carrier_update_text">"Atualizado há <xliff:g id="ID_1">^2</xliff:g>"</string>
+<string name="carrier_and_update_now_text">"Recém-atualizado por <xliff:g name="carrier" example="Google Fi">^1</xliff:g>"</string>
+<string name="no_carrier_update_now_text">"Atualizado agora"</string>
+<string name="launch_manage_plan_text">"Ver plano"</string>
+<string name="app_data_usage">"Dados uso de apps"</string>
+<string name="data_usage_app_restricted">"restrito"</string>
+<string name="cycle_reset_day_of_month_picker_title">"Data de redefinição do ciclo de uso"</string>
+<string name="cycle_reset_day_of_month_picker_subtitle">"Data de cada mês:"</string>
+<string name="cycle_reset_day_of_month_picker_positive_button">"Definir"</string>
+<string name="data_warning_limit_title">"Alerta e limite de dados"</string>
+<string name="app_usage_cycle">"Ciclo de uso de dados do app"</string>
+<string name="set_data_warning">"Definir alerta de uso de dados"</string>
+<string name="data_warning">"Aviso de dados"</string>
+<string name="set_data_limit">"Definir limite de dados"</string>
+<string name="data_limit">"Limite de dados"</string>
+<string name="data_usage_limit_dialog_title">"Limitando uso de dados"</string>
+<string name="data_usage_limit_dialog_mobile">"A unidade principal do veículo desativará os dados móveis quando atingir o limite que você definiu.\n\nComo o uso de dados é medido pela unidade principal e a operadora pode contabilizar o uso de forma diferente, considere definir um limite conservador."</string>
+<string name="data_usage_warning_editor_title">"Definir aviso de uso de dados"</string>
+<string name="data_usage_limit_editor_title">"Definir limite do uso de dados"</string>
+<string name="usage_bytes_threshold_picker_positive_button">"Definir"</string>
+<string name="wifi_settings">"Wi-Fi"</string>
+<string name="wifi_starting">"Ativando Wi-Fi..."</string>
+<string name="wifi_stopping">"Desativando Wi-Fi..."</string>
+<string name="wifi_disabled">"Wi-Fi desativado"</string>
+<string name="wifi_failed_forget_message">"Falha ao esquecer a rede"</string>
+<string name="wifi_failed_connect_message">"Falha ao conectar à rede"</string>
+<string name="wifi_setup_add_network">"Adicionar rede"</string>
+<string name="wifi_setup_connect">"Conectar"</string>
+<string name="wifi_password">"Senha"</string>
+<string name="wifi_show_password">"Mostrar senha"</string>
+<string name="wifi_no_network_name">"Digite um nome de rede"</string>
+<string name="wifi_ssid">"Nome da rede"</string>
+<string name="wifi_ssid_hint">"Digite o SSID"</string>
+<string name="wifi_security">"Segurança"</string>
+<string name="wifi_signal_strength">"Potência do sinal"</string>
+<string name="wifi_status">"Status"</string>
+<string name="wifi_speed">"Velocidade do link"</string>
+<string name="wifi_frequency">"Frequência"</string>
+<string name="wifi_ip_address">"Endereço IP"</string>
+<string name="show_password">"Mostrar senha"</string>
+<string name="default_network_name_summary">"Digite um nome de rede"</string>
+<string name="default_password_summary">"Digite a senha"</string>
+<string-array name="wifi_signals">
+<item>"Ruim"</item>
+<item>"Ruim"</item>
+<item>"Bom"</item>
+<item>"Bom"</item>
+<item>"Excelente"</item>
+</string-array>
+<string name="wifi_network_detail">"Detalhes da rede"</string>
+<string name="wifi_mac_address">"Endereço MAC"</string>
+<string name="wifi_ip_address_title">"Endereço IP"</string>
+<string name="wifi_subnet_mask">"Máscara de sub-rede"</string>
+<string name="wifi_details_ipv6_address_header">"Endereços IPv6"</string>
+<string name="wifi_gateway">"Gateway"</string>
+<string name="wifi_preferences_title">"Preferências de Wi‑Fi"</string>
+<string name="wifi_wakeup">"Ativar o Wi‑Fi automaticamente"</string>
+<string name="wifi_wakeup_summary">"Reativar o Wi‑Fi automaticamente perto de redes salvas de alta qualidade como sua rede doméstica"</string>
+<string name="wifi_wakeup_summary_no_location">"Indisponível porque a localização está desativada. Ative a "<annotation id="link">"localização"</annotation>"."</string>
+<string name="wifi_settings_scanning_required_title">"Ativar a Busca por Wi‑Fi?"</string>
+<string name="wifi_settings_scanning_required_turn_on">"Ativar"</string>
+<string name="wifi_settings_scanning_required_enabled">"Busca por Wi‑Fi ativada"</string>
+<string name="wifi_cellular_fallback_title">"Alternar para dados móveis automaticamente"</string>
+<string name="wifi_cellular_fallback_summary">"Usar dados móveis quando o Wi-Fi perder o acesso à Internet. Cobranças de dados podem ser aplicadas."</string>
+<string name="learn_more">"Saiba mais"</string>
+<string name="wifi_hotspot_name_title">"Nome do ponto de acesso"</string>
+<string name="wifi_hotspot_name_summary_connecting">"Ativando <xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g>..."</string>
+<string name="wifi_hotspot_name_summary_connected">"Outros dispositivos podem se conectar a <xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g>"</string>
+<string name="wifi_hotspot_password_title">"Senha do ponto de acesso"</string>
+<string name="wifi_hotspot_security_title">"Segurança"</string>
+<string name="wifi_hotspot_security_none">"Nenhum"</string>
+<string name="wifi_hotspot_ap_band_title">"Banda do ponto de acesso"</string>
+<string name="wifi_ap_band_config">"Selecionar banda de AP"</string>
+<string name="wifi_ap_choose_auto">"AUTO"</string>
+<string name="wifi_ap_choose_2G">"Banda de 2,4 GHz"</string>
+<string name="wifi_ap_choose_5G">"Banda de 5 GHz"</string>
+<string name="wifi_ap_prefer_5G">"Banda de 5 GHz preferencial"</string>
+<string name="wifi_ap_band_select_one">"Escolha pelo menos uma banda para o ponto de acesso Wi-Fi:"</string>
+<string name="tether_settings_title_all">"Ponto de acesso e tethering"</string>
+<string name="wifi_hotspot_auto_off_title">"Desativar ponto de acesso automaticamente"</string>
+<string name="wifi_hotspot_auto_off_summary">"O ponto de acesso Wi‑Fi será desativado se nenhum dispositivo for conectado"</string>
+<string name="wifi_ask_enable">"<xliff:g id="REQUESTER">%s</xliff:g> quer ativar o Wi-Fi"</string>
+<string name="wifi_ask_disable">"<xliff:g id="REQUESTER">%s</xliff:g> quer desativar o Wi-Fi"</string>
+<string name="wifi_error">"Erro"</string>
+<string name="bluetooth_settings_title">"Bluetooth"</string>
+<string name="bluetooth_device">"Dispositivo sem nome"</string>
+<string name="bluetooth_paired_devices">"Dispositivos pareados"</string>
+<string name="bluetooth_pair_new_device">"Parear novo dispositivo"</string>
+<string name="bluetooth_pair_new_device_summary">"O Bluetooth será ativado para o pareamento"</string>
+<string name="bluetooth_disconnect_title">"Desconectar dispositivo?"</string>
+<string name="bluetooth_disconnect_all_profiles">"O veículo será desconectado de \"<xliff:g example="Pixel" id="device_name">%1$s</xliff:g>.\""</string>
+<string name="bluetooth_vehicle_mac_address">"Endereço do Bluetooth do veículo: <xliff:g example="12:34:56:AB:CD:EF" id="address">%1$s</xliff:g>"</string>
+<string name="bluetooth_device_mac_address">"Endereço do Bluetooth do dispositivo: <xliff:g example="12:34:56:AB:CD:EF" id="address">%1$s</xliff:g>"</string>
+<string name="bluetooth_name">"Nome do veículo"</string>
+<string name="bluetooth_rename_vehicle">"Renomear este veículo"</string>
+<string name="bluetooth_rename_device">"Renomear dispositivo"</string>
+<string name="bluetooth_rename_button">"Renomear"</string>
+<string name="bluetooth_available_devices">"Dispositivos disponíveis"</string>
+<string name="bluetooth_profiles">"Perfis"</string>
+<string name="bluetooth_turning_on">"Ativando Bluetooth..."</string>
+<string name="bluetooth_turning_off">"Desligar o Bluetooth…"</string>
+<string name="bluetooth_ask_enablement">"O <xliff:g id="app_name" example="FancyApp">%1$s</xliff:g> deseja ativar o Bluetooth"</string>
+<string name="bluetooth_ask_disablement">"O <xliff:g id="app_name" example="FancyApp">%1$s</xliff:g> deseja desativar o Bluetooth"</string>
+<string name="bluetooth_ask_enablement_no_name">"Um app quer ativar o Bluetooth"</string>
+<string name="bluetooth_ask_disablement_no_name">"Um app quer desativar o Bluetooth"</string>
+<string name="bluetooth_ask_discovery">"O <xliff:g id="app_name">%1$s</xliff:g> deseja tornar sua unidade principal visível para outros dispositivos Bluetooth por <xliff:g id="timeout">%2$d</xliff:g> segundos."</string>
+<string name="bluetooth_ask_discovery_no_name">"Um aplicativo deseja tornar sua unidade principal visível para outros dispositivos Bluetooth por <xliff:g id="timeout">%1$d</xliff:g> segundos."</string>
+<string name="bluetooth_ask_enablement_and_discovery">"O <xliff:g id="app_name">%1$s</xliff:g> deseja ativar o Bluetooth e tornar sua unidade principal visível para outros dispositivos por <xliff:g id="timeout">%2$d</xliff:g> segundos."</string>
+<string name="bluetooth_ask_enablement_and_discovery_no_name">"Um aplicativo deseja ativar o Bluetooth e tornar sua unidade principal visível para outros dispositivos por <xliff:g id="timeout">%1$d</xliff:g> segundos."</string>
+<string name="bluetooth_notif_ticker">"Solicitação de pareamento Bluetooth"</string>
+<string name="bluetooth_device_context_pair_connect">"Parear e conectar"</string>
+<string name="bluetooth_pairing_key_msg">"Código de pareamento Bluetooth"</string>
+<string name="bluetooth_enable_alphanumeric_pin">"O PIN contém letras ou símbolos"</string>
+<string name="bluetooth_enter_passkey_msg">"Digite o código de pareamento e pressione \"Return\" ou \"Enter\""</string>
+<string name="bluetooth_pairing_request">"Emparelhar com o <xliff:g example="Pixel" id="device_name">%1$s</xliff:g>?"</string>
+<string name="bluetooth_pairing_shares_phonebook">"Permita que o <xliff:g example="Pixel" id="device_name">%1$s</xliff:g> acesse seus contatos e histórico de chamadas"</string>
+<string name="bluetooth_enter_pin_other_device">"Talvez seja necessário digitar este PIN no outro dispositivo."</string>
+<string name="bluetooth_enter_passkey_other_device">"Talvez seja necessário digitar esta senha no outro dispositivo."</string>
+<string name="bluetooth_pin_values_hint_16_digits">"São necessários 16 dígitos"</string>
+<string name="bluetooth_pin_values_hint">"Geralmente, 0000 ou 1234"</string>
+<string name="bluetooth_notif_title">"Solicitação de pareamento"</string>
+<string name="bluetooth_notif_message">"Toque para parear com <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
+<string name="bluetooth_device_picker">"Escolher dispositivo Bluetooth"</string>
+<string name="language_settings">"Línguas"</string>
+<string name="keyboard_settings">"Teclado"</string>
+<string name="manage_keyboard">"Gerenciar teclados"</string>
+<string name="text_to_speech_settings">"Conversão de texto em voz"</string>
+<string name="text_to_speech_preferred_engine_settings">"Mecanismo preferencial"</string>
+<string name="text_to_speech_current_engine">"Motor atual"</string>
+<string name="tts_speech_rate">"Taxa de fala"</string>
+<string name="tts_pitch">"Frequência do som"</string>
+<string name="tts_reset">"Redefinir"</string>
+<string name="sound_settings">"Som"</string>
+<string name="ring_volume_title">"volume do toque"</string>
+<string name="navi_volume_title">"Volume de navegação"</string>
+<string name="incoming_call_volume_title">"Toque"</string>
+<string name="notification_volume_title">"Notificação"</string>
+<string name="media_volume_title">"Mídia"</string>
+<string name="media_volume_summary">"Definir o volume para música e vídeos"</string>
+<string name="alarm_volume_title">"Alarme"</string>
+<string name="ringtone_title">"Toque do telefone"</string>
+<string name="notification_ringtone_title">"Som de notificação padrão"</string>
+<string name="alarm_ringtone_title">"Som de alarme padrão"</string>
+<string name="units_settings">"Unidades"</string>
+<string name="units_speed_title">"Velocidade"</string>
+<string name="units_distance_title">"Distância"</string>
+<string name="units_fuel_consumption_title">"Consumo de combustível"</string>
+<string name="units_energy_consumption_title">"Consumo de energia"</string>
+<string name="units_temperature_title">"Temperatura"</string>
+<string name="units_volume_title">"Volume"</string>
+<string name="units_pressure_title">"Pressão"</string>
+<string name="units_list_entry">"<xliff:g example="mph" id="unit_abbreviation">%1$s</xliff:g> - <xliff:g example="Miles per hour" id="unit_pronunciation">%2$s</xliff:g>"</string>
+<string name="units_ratio">"<xliff:g example="km" id="unit_numerator">%1$s</xliff:g>/<xliff:g example="h" id="unit_denominator">%2$s</xliff:g>"</string>
+<string name="units_ratio_numerator">"<xliff:g example="10" id="unit_numerator_quantity">%1$d</xliff:g><xliff:g example="kWh" id="unit_numerator_unit">%2$s</xliff:g>"</string>
+<string name="units_ratio_denominator">"<xliff:g example="100" id="unit_denominator_quantity">%1$d</xliff:g><xliff:g example="mi" id="unit_denominator_unit">%2$s</xliff:g>"</string>
+<string name="units_unit_name_meter_per_sec">"Metro por segundo"</string>
+<string name="units_unit_name_rpm">"Rotações por minuto"</string>
+<string name="units_unit_name_hertz">"Hertz"</string>
+<string name="units_unit_name_percentile">"Percentil"</string>
+<string name="units_unit_name_millimeter">"Milímetro"</string>
+<string name="units_unit_name_meter">"Metro"</string>
+<string name="units_unit_name_kilometer">"Quilômetro"</string>
+<string name="units_unit_name_mile">"Milha"</string>
+<string name="units_unit_name_celsius">"Celsius"</string>
+<string name="units_unit_name_fahrenheit">"Fahrenheit"</string>
+<string name="units_unit_name_kelvin">"Kelvin"</string>
+<string name="units_unit_name_milliliter">"Mililitro"</string>
+<string name="units_unit_name_liter">"Litro"</string>
+<string name="units_unit_name_us_gallon">"Galão"</string>
+<string name="units_unit_name_imperial_gallon">"Galão imperial"</string>
+<string name="units_unit_name_nano_secs">"Nanossegundo"</string>
+<string name="units_unit_name_secs">"segundo"</string>
+<string name="units_unit_name_year">"ano"</string>
+<string name="units_unit_name_kilopascal">"Quilopascal"</string>
+<string name="units_unit_name_watt_hour">"Watt-hora"</string>
+<string name="units_unit_name_milliampere">"Miliampere"</string>
+<string name="units_unit_name_millivolt">"Milivolt"</string>
+<string name="units_unit_name_milliwatts">"Miliwatt"</string>
+<string name="units_unit_name_ampere_hour">"Ampere-hora"</string>
+<string name="units_unit_name_kilowatt_hour">"Quilowatt-hora"</string>
+<string name="units_unit_name_psi">"Libras por polegada quadrada"</string>
+<string name="units_unit_name_miles_per_hour">"Milhas por hora"</string>
+<string name="units_unit_name_kilometers_per_hour">"Quilômetros por hora"</string>
+<string name="units_unit_name_bar">"Bar"</string>
+<string name="units_unit_name_degrees">"Grau"</string>
+<string name="units_unit_name_kilowatt_per_hundred_miles">"Quilowatt por cem milhas"</string>
+<string name="units_unit_name_kilowatt_per_hundred_kilometers">"Quilowatt por cem quilômetros"</string>
+<string name="units_unit_name_miles_per_gallon_us">"Milhas por galão (EUA)"</string>
+<string name="units_unit_name_miles_per_gallon_uk">"Milhas por galão (Reino Unido)"</string>
+<string name="units_unit_name_kilometers_per_liter">"Quilômetros por litro"</string>
+<string name="units_unit_name_liter_per_hundred_kilometers">"Litros por cem quilômetros"</string>
+<string name="apps_and_notifications_settings">"Apps e notificações"</string>
+<string name="all_applications">"Mostrar todos os aplicativos"</string>
+<string name="default_applications">"Apps padrão"</string>
+<string name="app_permissions">"Permissões do app"</string>
+<string name="app_permissions_summary">"Apps usando <xliff:g id="APPS">%1$s</xliff:g>"</string>
+<string name="applications_settings">"Informações do app"</string>
+<string name="force_stop">"Forçar parada"</string>
+<string name="force_stop_dialog_title">"Forçar parada?"</string>
+<string name="force_stop_dialog_text">"Se você forçar a parada de um app, ele pode apresentar mau funcionamento."</string>
+<string name="disable_text">"Desativar"</string>
+<string name="enable_text">"Ativar"</string>
+<string name="uninstall_text">"Desinstalar"</string>
+<string name="app_disable_dialog_text">"Se você desativar este aplicativo, o Android e outros aplicativos não poderão mais funcionar como pretendido."</string>
+<string name="app_disable_dialog_positive">"Desativar app"</string>
+<string name="not_installed">"Não instalado para o usuário"</string>
+<string name="permissions_label">"Permissões"</string>
+<string name="notifications_label">"Notificações"</string>
+<string name="application_version_label">"Versão: %1$s"</string>
+<string name="runtime_permissions_summary_no_permissions_granted">"Nenhuma permissão concedida"</string>
+<string name="runtime_permissions_summary_no_permissions_requested">"Nenhuma permissão solicitada"</string>
+<string name="data_usage_summary_title">"Uso de dados"</string>
+<string name="data_usage_app_summary_title">"Dados uso de apps"</string>
+<string name="computing_size">"Calculando…"</string>
+<plurals name="runtime_permissions_additional_count">
+<item quantity="one">"<xliff:g example="1" id="count">%d</xliff:g> permissão adicional"</item>
+<item quantity="other">"<xliff:g example="10" id="count">%d</xliff:g> permissões adicionais"</item>
+</plurals>
+<string name="direct_boot_unaware_dialog_message_car">"Nota: após uma reinicialização, este aplicativo não poderá iniciar até que você desbloqueie o veículo."</string>
+<string name="assist_and_voice_input_settings">"Assistivo e voz"</string>
+<string name="assist_app_settings">"App de assistência"</string>
+<string name="assist_access_context_title">"Usar texto da tela"</string>
+<string name="assist_access_context_summary">"Permitir que o app de assistência acesse o conteúdo da tela como texto"</string>
+<string name="assist_access_screenshot_title">"Usar captura de tela"</string>
+<string name="assist_access_screenshot_summary">"Permitir que o app de assistência acesse uma imagem da tela"</string>
+<string name="voice_input_settings_title">"Entrada de texto por voz"</string>
+<string name="autofill_settings_title">"Preenchimento automático"</string>
+<string name="app_list_preference_none">"Nenhum"</string>
+<string name="default_app_selected_app">"Selecionado"</string>
+<string name="assistant_security_warning">"O assistente lerá informações sobre apps em uso no seu sistema, incluindo informações visíveis na tela ou as que podem ser acessadas nos apps."</string>
+<string name="autofill_confirmation_message">"<b>Você precisa confiar nesse app</b> <br/> <br/> <xliff:g id="app_name" example="O Preenchimento automático do Google">%1$s</xliff:g> usa o que está na sua tela para determinar o que pode ser preenchido automaticamente."</string>
+<string name="autofill_add_service">"Adicionar serviço"</string>
+<string name="app_launch_domain_links_title">"Abrir links"</string>
+<string name="domain_url_section_title">"Apps instalados"</string>
+<string name="domain_urls_summary_none">"Não abrir links compatíveis"</string>
+<string name="domain_urls_summary_one">"Abrem <xliff:g id="DOMAIN">%s</xliff:g>"</string>
+<string name="domain_urls_summary_some">"Abrir <xliff:g id="DOMAIN">%s</xliff:g> e outros URLs"</string>
+<string name="app_launch_title">"Abrir por padrão"</string>
+<string name="app_launch_other_defaults_title">"Outros padrões"</string>
+<string name="auto_launch_disable_text">"Nenhum padrão definido."</string>
+<string name="auto_launch_enable_text">"Você decidiu lançar este app por padrão para algumas ações."</string>
+<string name="auto_launch_reset_text">"Limpar padrão"</string>
+<string name="app_launch_open_domain_urls_title">"Abrir links compatíveis"</string>
+<string name="app_link_open_always">"Abrir neste app"</string>
+<string name="app_link_open_ask">"Perguntar sempre"</string>
+<string name="app_link_open_never">"Não abrir este aplicativo"</string>
+<string name="app_launch_supported_domain_urls_title">"Links compatíveis"</string>
+<string name="special_access">"Acesso especial a apps"</string>
+<string name="show_system">"Mostrar sistema"</string>
+<string name="hide_system">"Ocultar sistema"</string>
+<string name="modify_system_settings_title">"modificar configurações do sistema"</string>
+<string name="modify_system_settings_description">"Esta permissão permite que um app modifique configurações do sistema."</string>
+<string name="notification_access_title">"Acesso a notificações"</string>
+<string name="notification_listener_security_warning_title">"Permitir acesso de notificação do <xliff:g id="service" example="NotificationReader">%1$s</xliff:g>?"</string>
+<string name="notification_listener_security_warning_summary">"O <xliff:g id="notification_listener_name">%1$s</xliff:g> poderá ler todas as notificações, inclusive informações pessoais, tais como nomes de contato e o texto de mensagens recebidas. Também poderá ignorar notificações ou disparar botões de ação nelas contidos.\n\nIsso também dará ao aplicativo a capacidade de ativar ou desativar a função Não perturbe, e alterar configurações relacionadas."</string>
+<string name="notification_listener_revoke_warning_summary">"Se você desativar o acesso de notificação do <xliff:g id="notification_listener_name">%1$s</xliff:g>, o acesso à função Não perturbe também poderá ser desativado."</string>
+<string name="notification_listener_revoke_warning_confirm">"Desligar"</string>
+<string name="notification_listener_revoke_warning_cancel">"Cancelar"</string>
+<string name="premium_sms_access_title">"Acesso a SMS premium"</string>
+<string name="premium_sms_access_description">"O SMS premium pode gerar custos e será adicionado ao faturamento da sua operadora. Se você conceder permissão para um app, será possível enviar SMS premium usando esse app."</string>
+<string name="usage_access_title">"Acesso de uso"</string>
+<string name="usage_access_description">"O acesso de uso permite que um app rastreie que outros apps você está usando e com que frequência, bem como sua operadora, as configurações de idioma e outros detalhes."</string>
+<string name="wifi_control_title">"Controle de Wi-Fi"</string>
+<string name="wifi_control_description">"O controle do Wi-Fi permite que um aplicativo ative ou desative o Wi-Fi, procure e se conecte a redes Wi-Fi, adicione ou remova redes, ou inicie um ponto de acesso somente local."</string>
+<string name="more_special_access_title">"Mais"</string>
+<string name="location_settings_title">"Local"</string>
+<string name="location_settings_recent_requests_title">"Solicitações recentes"</string>
+<string name="location_settings_recent_requests_empty_message">"Nenhuma solicitação de localização recente"</string>
+<string name="location_settings_app_permissions_title">"Permissões em nível de aplicativo"</string>
+<string name="location_settings_scanning_title">"Verificação"</string>
+<string name="location_settings_services_title">"Serviços de localização"</string>
+<string name="location_settings_wifi_scanning_title">"Verificação de Wi-Fi"</string>
+<string name="location_settings_wifi_scanning_summary">"Permite que apps e serviços procurem redes Wi‑Fi a qualquer momento, mesmo quando o Wi‑Fi está desativado. Essa configuração pode ser usada, por exemplo, para melhorar recursos e serviços baseados na localização."</string>
+<string name="location_settings_bluetooth_scanning_title">"Verificação de Bluetooth"</string>
+<string name="location_settings_bluetooth_scanning_summary">"Permite que apps e serviços procurem dispositivos próximos a qualquer momento, mesmo quando o Bluetooth está desativado. Essa configuração pode ser usada, por exemplo, para melhorar recursos e serviços baseados na localização."</string>
+<string name="system_setting_title">"Sistema"</string>
+<string name="system_update_settings_title">"Atualizações do sistema"</string>
+<string name="firmware_version">"Versão do Android"</string>
+<string name="security_patch">"Nível do patch de segurança do Android"</string>
+<string name="model_info">"Modelo"</string>
+<string name="baseband_version">"Versão da banda de base"</string>
+<string name="kernel_version">"Versão do kernel"</string>
+<string name="build_number">"Número da versão"</string>
+<string name="bluetooth_mac_address">"Endereço Bluetooth"</string>
+<string name="device_info_not_available">"Não disponível"</string>
+<string name="device_status_activity_title">"Status"</string>
+<string name="device_status">"Status"</string>
+<string name="device_status_summary" product="tablet">"Status da bateria, da rede e outras informações"</string>
+<string name="device_status_summary" product="default">"Número de telefone, sinal etc."</string>
+<string name="about_settings">"Sobre"</string>
+<string name="about_summary">"Android <xliff:g example="6.0" id="version">%1$s</xliff:g>"</string>
+<string name="about_settings_summary">"Ver informações legais, status, versão do software"</string>
+<string name="legal_information">"Informações legais"</string>
+<string name="contributors_title">"Colaboradores"</string>
+<string name="manual">"Manual"</string>
+<string name="regulatory_labels">"Informações regulatórias"</string>
+<string name="safety_and_regulatory_info">"Manual de segurança e regulamentação"</string>
+<string name="copyright_title">"Direitos autorais"</string>
+<string name="license_title">"Licença"</string>
+<string name="terms_title">"Termos e Condições"</string>
+<string name="webview_license_title">"Licenças de Exibição da Web do sistema"</string>
+<string name="wallpaper_attributions">"Planos de fundo"</string>
+<string name="wallpaper_attributions_values">"Provedores de imagens de satélite:\n©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
+<string name="settings_license_activity_title">"Licenças de terceiros"</string>
+<string name="settings_license_activity_unavailable">"Há um problema ao carregar as licenças."</string>
+<string name="settings_license_activity_loading">"Carregando…"</string>
+<plurals name="show_dev_countdown">
+<item quantity="one">"Faltam <xliff:g id="STEP_COUNT_1">%1$d</xliff:g> etapas para você se tornar um desenvolvedor."</item>
+<item quantity="other">"Faltam <xliff:g id="STEP_COUNT_1">%1$d</xliff:g> etapas para você se tornar um desenvolvedor."</item>
+</plurals>
+<string name="show_dev_on">"Você agora é um desenvolvedor!"</string>
+<string name="show_dev_already">"Não é necessário. Você já é um desenvolvedor."</string>
+<string name="developer_options_settings">"Opções de desenvolvedor"</string>
+<string name="reset_options_title">"Redefinir opções"</string>
+<string name="reset_options_summary">"Reinicialização da rede, aplicativos ou dispositivo"</string>
+<string name="reset_network_title">"Reinicializar rede"</string>
+<string name="reset_network_desc">"Isso reinicializará todas as configurações de rede, incluindo:"</string>
+<string name="reset_network_item_wifi">"<li>Wi-Fi</li>"</string>
+<string name="reset_network_item_mobile">"<li>Dados móveis</li>"</string>
+<string name="reset_network_item_bluetooth">"<li>Bluetooth</li>"</string>
+<string name="reset_esim_title">"Apagar todos os eSIMs do veículo"</string>
+<string name="reset_esim_desc">"Isso não cancelará seu plano de serviço."</string>
+<string name="reset_esim_error_title">"Não é possível redefinir eSIMs"</string>
+<string name="reset_network_select">"Selecionar rede"</string>
+<string name="reset_network_button_text">"Redefinir configurações"</string>
+<string name="reset_network_confirm_title">"Redefinir?"</string>
+<string name="reset_network_confirm_desc">"Redefinir todas as configurações de rede? Não é possível desfazer esta ação."</string>
+<string name="reset_network_confirm_button_text">"Redefinir configurações"</string>
+<string name="reset_network_complete_toast">"As configurações de rede foram redefinidas"</string>
+<string name="reset_app_pref_title">"Redefinir preferências"</string>
+<string name="reset_app_pref_desc">"Isso redefinirá todas as preferências de:\n\n<li>Aplicativos desativados</li>\n<li>Notificações de aplicativos desativados</li>\n<li>Aplicativos padrão para ações</li>\n<li>Restrições de dados em segundo plano para aplicativos</li>\n<li>Quaisquer restrições de permissão</li>\n\nVocê não perderá nenhum dado de aplicativo."</string>
+<string name="reset_app_pref_button_text">"Redefinir apps"</string>
+<string name="reset_app_pref_complete_toast">"Preferências de aplicativo foram redefinidas"</string>
+<string name="master_clear_title">"Limpar todos os dados (redefinição para configuração original)"</string>
+<string name="master_clear_desc">"Isto apagará todos os dados da unidade principal do veículo, incluindo:\n\n<li>Sua conta Google</li>\n<li>Dados e configurações do sistema e de aplicativos</li>\n<li>Aplicativos baixados</li>"</string>
+<string name="master_clear_accounts">"Você está atualmente conectado às seguintes contas:"</string>
+<string name="master_clear_other_users_present">"Há outros usuários presentes neste veículo."</string>
+<string name="master_clear_button_text">"Redefinir veículo"</string>
+<string name="master_clear_confirm_title">"Redefinir?"</string>
+<string name="master_clear_confirm_desc">"Limpar todas as suas informações pessoais e apps baixados por download? Não é possível desfazer esta ação."</string>
+<string name="master_clear_confirm_button_text">"Apagar tudo"</string>
+<string name="master_clear_progress_title">"Apagando"</string>
+<string name="master_clear_progress_text">"Aguarde..."</string>
+<string name="date_and_time_settings_title">"Data e hora"</string>
+<string name="date_and_time_settings_summary">"Definir data, hora, fuso horário e formatos"</string>
+<string name="date_time_auto">"Data e hora automáticas"</string>
+<string name="date_time_auto_summary">"Usar horário fornecido pela rede"</string>
+<string name="zone_auto">"Fuso horário automático"</string>
+<string name="zone_auto_summary">"Usar fuso horário fornecido pela rede"</string>
+<string name="date_time_24hour_title">"Formato 24 horas"</string>
+<string name="date_time_24hour">"Uasr formato  24 horas"</string>
+<string name="date_time_set_time_title">"Hora"</string>
+<string name="date_time_set_time">"Definir hora"</string>
+<string name="date_time_set_timezone_title">"Fuso horário"</string>
+<string name="date_time_set_timezone">"Selecionar fuso horário"</string>
+<string name="date_time_set_date_title">"Data"</string>
+<string name="date_time_set_date">"Definir data"</string>
+<string name="zone_list_menu_sort_alphabetically">"Classificar em ordem alfabética"</string>
+<string name="zone_list_menu_sort_by_timezone">"Classificar por fuso horário"</string>
+<string name="date_picker_title">"Data"</string>
+<string name="time_picker_title">"Hora"</string>
+<string name="user_admin">"Administrador"</string>
+<string name="signed_in_admin_user">"Conectado(a) como administrador"</string>
+<string name="grant_admin_permissions_title">"Todas as permissões de administrador"</string>
+<string name="grant_admin_permissions_button_text">"Tornar administrador"</string>
+<string name="grant_admin_permissions_message">"O usuário poderá excluir usuários, incluindo outros administradores, e redefinir o sistema às configurações de fábrica."</string>
+<string name="action_not_reversible_message">"Esta ação é irreversível."</string>
+<string name="confirm_grant_admin">"Sim, tornar administrador"</string>
+<string name="create_user_permission_title">"Criar novos usuários"</string>
+<string name="outgoing_calls_permission_title">"Realizar chamadas de celular"</string>
+<string name="sms_messaging_permission_title">"Sistema de mensagens via dados móveis do veículo"</string>
+<string name="install_apps_permission_title">"Instalar novos aplicativos"</string>
+<string name="uninstall_apps_permission_title">"Desinstalar aplicativos"</string>
+<string name="user_add_user_menu">"Adicionar usuário"</string>
+<string name="user_new_user_name">"Novo usuário"</string>
+<string name="user_add_user_title">"Adicionar novo usuário?"</string>
+<string name="user_add_user_message_setup">"Ao adicionar um novo usuário, essa pessoa precisa configurar o próprio espaço."</string>
+<string name="user_add_user_message_update">"Qualquer usuário pode atualizar aplicativos para todos os demais usuários."</string>
+<string name="user_limit_reached_title">"Limite do usuário atingido"</string>
+<plurals name="user_limit_reached_message">
+<item quantity="one">"Somente um usuário pode ser criado."</item>
+<item quantity="other">"Você pode criar até <xliff:g example="3" id="count">%d</xliff:g> usuários."</item>
+</plurals>
+<string name="add_user_error_title">"Falha ao criar novo usuário"</string>
+<string name="delete_user_dialog_title">"Excluir este usuário?"</string>
+<string name="delete_user_dialog_message">"Todos os apps e dados serão excluídos."</string>
+<string name="delete_user_error_title">"Falha ao excluir usuário."</string>
+<string name="delete_user_error_dismiss">"Dispensar"</string>
+<string name="delete_user_error_retry">"Tentar novamente"</string>
+<string name="delete_last_user_dialog_title">"Excluir último usuário?"</string>
+<string name="delete_last_user_admin_created_message">"Após excluir o único usuário restante para este veículo, um novo usuário administrador será criado."</string>
+<string name="delete_last_user_system_setup_required_message">"Todos os dados, configurações e aplicativos associados a este usuário serão excluídos. Você precisará configurar o sistema novamente."</string>
+<string name="choose_new_admin_title">"Escolher novo administrador"</string>
+<string name="choose_new_admin_message">"Você precisa de pelo menos um administrador. Para excluir este, primeiro escolha um substituto."</string>
+<string name="choose_new_admin_label">"Escolher administrador"</string>
+<string name="user_guest">"Convidado"</string>
+<string name="start_guest_session">"Convidado"</string>
+<string name="user_switch">"Alternar"</string>
+<string name="current_user_name">"Você (%1$s)"</string>
+<string name="user_name_label">"Nome"</string>
+<string name="user_summary_not_set_up">"Não configurado"</string>
+<string name="edit_user_name_title">"Editar nome de usuário"</string>
+<string name="users_list_title">"Usuários"</string>
+<string name="user_details_admin_title">"Permissões concedidas a %1$s"</string>
+<string name="storage_settings_title">"Armazenamento"</string>
+<string name="storage_music_audio">"Música e áudio"</string>
+<string name="storage_other_apps">"Outros apps"</string>
+<string name="storage_files">"Arquivos"</string>
+<string name="storage_system">"Sistema"</string>
+<string name="storage_detail_dialog_system">"O sistema inclui arquivos usados para executar a versão <xliff:g id="VERSION">%s</xliff:g> do Android"</string>
+<string name="storage_audio_files_title">"Arquivos de áudio"</string>
+<string name="memory_calculating_size">"Calculando..."</string>
+<string name="storage_application_size_label">"Tamanho do app"</string>
+<string name="storage_data_size_label">"Dados do usuário"</string>
+<string name="storage_cache_size_label">"Cache"</string>
+<string name="storage_total_size_label">"Total"</string>
+<string name="storage_clear_user_data_text">"Limpar armazenamento"</string>
+<string name="storage_clear_cache_btn_text">"Limpar cache"</string>
+<string name="storage_clear_data_dlg_title">"Excluir os dados do app?"</string>
+<string name="storage_clear_data_dlg_text">"Todos os dados deste app serão excluídos permanentemente. Isso inclui todos os arquivos, configurações, contas, bancos de dados e outros."</string>
+<string name="storage_clear_failed_dlg_text">"Não foi possível limpar o armazenamento do app."</string>
+<string name="accounts_settings_title">"Contas"</string>
+<string name="user_add_account_menu">"Adicionar conta"</string>
+<string name="no_accounts_added">"Nenhuma conta adicionada"</string>
+<string name="account_list_title">"Contas de <xliff:g id="current_user_name">%1$s</xliff:g> "</string>
+<string name="account_auto_sync_title">"Sincronizar dados automaticamente"</string>
+<string name="account_auto_sync_summary">"Permitir que os apps atualizem dados automaticamente"</string>
+<string name="data_usage_auto_sync_on_dialog_title">"Ativar sincronização automática?"</string>
+<string name="data_usage_auto_sync_on_dialog">"Todas alterações que você fizer em suas contas na Web serão copiadas automaticamente para seu dispositivo.\n\nAlgumas contas também podem copiar automaticamente para a Internet todas as mudanças que você fizer no telefone. Uma conta Google funciona dessa forma."</string>
+<string name="data_usage_auto_sync_off_dialog_title">"Desativar sincronização automática?"</string>
+<string name="data_usage_auto_sync_off_dialog">"Isso conservará os dados, mas você precisará sincronizar cada conta manualmente para coletar informações recentes. E você não receberá notificações quando ocorrerem atualizações."</string>
+<string name="account_details_title">"Informações da conta"</string>
+<string name="add_account_title">"Adicionar conta"</string>
+<string name="add_an_account">"Adicionar uma conta"</string>
+<string name="user_cannot_add_accounts_message">"Perfis restritos não podem adicionar contas"</string>
+<string name="remove_account_title">"Remover conta"</string>
+<string name="really_remove_account_title">"Remover conta?"</string>
+<string name="really_remove_account_message">"A remoção desta conta excluirá do dispositivo todas as mensagens, os contatos e outros dados dela."</string>
+<string name="remove_account_error_title">"Falha ao remover conta."</string>
+<string name="account_sync_title">"Sincronização da conta"</string>
+<string name="account_sync_summary_some_on">"Sincronização ativada para <xliff:g id="ID_1">%1$d</xliff:g> de <xliff:g id="ID_2">%2$d</xliff:g> itens"</string>
+<string name="account_sync_summary_all_on">"Sincronização ativada para todos os itens"</string>
+<string name="account_sync_summary_all_off">"Sincronização desativada para todos os itens"</string>
+<string name="sync_disabled">"Sincronização DESATIVADA"</string>
+<string name="sync_error">"Erro na sincronização"</string>
+<string name="last_synced">"Última sincronização em <xliff:g id="last_sync_time" example="12/05/18, 12:30 PM">%1$s</xliff:g>"</string>
+<string name="sync_in_progress">"Sincronizando agora..."</string>
+<string name="sync_button_sync_now">"Sincronizar agora"</string>
+<string name="sync_button_sync_cancel">"Cancelar sincronização"</string>
+<string name="sync_is_failing">"A sincronização está enfrentando problemas no momento. Ela retornará em breve."</string>
+<string name="security_settings_title">"Segurança"</string>
+<string name="security_settings_subtitle">"Bloquear tela"</string>
+<string name="security_lock_none">"Nenhum"</string>
+<string name="security_lock_pattern">"Padrão"</string>
+<string name="security_lock_pin">"Fixar guia"</string>
+<string name="security_lock_password">"Senha"</string>
+<string name="lock_settings_picker_title">"Escolha um tipo de bloqueio"</string>
+<string name="lock_settings_enter_pattern">"Digite seu padrão"</string>
+<string name="lockpattern_confirm_button_text">"Confirmar"</string>
+<string name="lockpattern_restart_button_text">"Desenhar novamente"</string>
+<string name="continue_button_text">"Continuar"</string>
+<string name="lockscreen_retry_button_text">"Tentar novamente"</string>
+<string name="lockscreen_skip_button_text">"Ignorar"</string>
+<string name="set_screen_lock">"Defina um bloqueio de tela"</string>
+<string name="lockscreen_choose_your_pin">"Escolha o seu PIN"</string>
+<string name="lockscreen_choose_your_pattern">"Escolha seu padrão"</string>
+<string name="lockscreen_choose_your_password">"Escolha a sua senha"</string>
+<string name="current_screen_lock">"Bloqueio de tela atual"</string>
+<string name="choose_lock_pattern_message">"Para sua segurança, defina um padrão"</string>
+<string name="lockpattern_retry_button_text">"Limpar"</string>
+<string name="lockpattern_cancel_button_text">"Cancelar"</string>
+<string name="lockpattern_pattern_confirmed">"Seu novo padrão de desbloqueio"</string>
+<string name="lockpattern_recording_intro_header">"Desenhe um padrão de desbloqueio"</string>
+<string name="lockpattern_recording_inprogress">"Levante o dedo ao terminar"</string>
+<string name="lockpattern_pattern_entered">"Padrão registrado"</string>
+<string name="lockpattern_need_to_confirm">"Desenhe o padrão novamente para confirmar"</string>
+<string name="lockpattern_recording_incorrect_too_short">"Conecte pelo menos 4 pontos. Tente novamente."</string>
+<string name="lockpattern_pattern_wrong">"Padrão incorreto"</string>
+<string name="lockpattern_settings_help_how_to_record">"Como desenhar um padrão de desbloqueio"</string>
+<string name="error_saving_lockpattern">"Erro ao salvar padrão"</string>
+<string name="okay">"OK"</string>
+<string name="remove_screen_lock_title">"Remover bloqueio de tela?"</string>
+<string name="remove_screen_lock_message">"Isso permitirá que qualquer pessoa acesse sua conta"</string>
+<string name="lock_settings_enter_pin">"Digite o seu PIN"</string>
+<string name="lock_settings_enter_password">"Digite sua senha"</string>
+<string name="choose_lock_pin_message">"Para sua segurança, defina um PIN"</string>
+<string name="confirm_your_pin_header">"Digite seu PIN novamente"</string>
+<string name="choose_lock_pin_hints">"O PIN deve ter pelo menos 4 dígitos"</string>
+<string name="lockpin_invalid_pin">"PIN inválido, deve ter pelo menos 4 dígitos."</string>
+<string name="confirm_pins_dont_match">"Os PINs não correspondem"</string>
+<string name="error_saving_lockpin">"Erro ao salvar PIN"</string>
+<string name="lockscreen_wrong_pin">"PIN incorreto"</string>
+<string name="lockscreen_wrong_password">"Senha incorreta"</string>
+<string name="choose_lock_password_message">"Para sua segurança, defina uma senha"</string>
+<string name="confirm_your_password_header">"Digite sua senha novamente"</string>
+<string name="confirm_passwords_dont_match">"As senhas não coincidem"</string>
+<string name="lockpassword_clear_label">"Limpar"</string>
+<string name="lockpassword_cancel_label">"Cancelar"</string>
+<string name="lockpassword_confirm_label">"Confirmar"</string>
+<string name="choose_lock_password_hints">"Deve ter pelo menos 4 caracteres"</string>
+<string name="lockpassword_password_too_short">"Deve ter pelo menos <xliff:g example="3" id="count">%d</xliff:g> caracteres"</string>
+<string name="lockpassword_pin_too_short">"O PIN deve ter pelo menos <xliff:g example="3" id="count">%d</xliff:g> dígitos"</string>
+<string name="lockpassword_password_too_long">"Deve ter menos de <xliff:g example="17" id="number">%d</xliff:g> caracteres"</string>
+<string name="lockpassword_pin_too_long">"Deve ter menos de <xliff:g example="17" id="number">%d</xliff:g> dígitos"</string>
+<string name="lockpassword_pin_contains_non_digits">"Deve conter apenas dígitos de 0-9."</string>
+<string name="lockpassword_pin_recently_used">"O administrador do dispositivo não permite o uso de um PIN recente"</string>
+<string name="lockpassword_pin_blacklisted_by_admin">"PINs comuns foram bloqueados pelo seu administrador de TI. Tente um PIN diferente."</string>
+<string name="lockpassword_illegal_character">"Não pode incluir um caractere inválido."</string>
+<string name="lockpassword_invalid_password">"Senha inválida, deve ter pelo menos 4 caracteres."</string>
+<plurals name="lockpassword_password_requires_letters">
+<item quantity="one">"Precisa ter pelo menos <xliff:g id="COUNT">%d</xliff:g> letra"</item>
+<item quantity="other">"Deve conter pelo menos <xliff:g example="3" id="count">%d</xliff:g> letras"</item>
+</plurals>
+<plurals name="lockpassword_password_requires_lowercase">
+<item quantity="one">"Precisa ter pelo menos <xliff:g id="COUNT">%d</xliff:g> letra minúscula"</item>
+<item quantity="other">"Deve conter pelo menos <xliff:g example="3" id="count">%d</xliff:g> letras em minúscula"</item>
+</plurals>
+<plurals name="lockpassword_password_requires_uppercase">
+<item quantity="one">"Precisa ter pelo menos <xliff:g id="COUNT">%d</xliff:g> letra maiúscula"</item>
+<item quantity="other">"Deve conter pelo menos <xliff:g example="3" id="count">%d</xliff:g> letras em maiúscula"</item>
+</plurals>
+<plurals name="lockpassword_password_requires_numeric">
+<item quantity="one">"Precisa ter pelo menos <xliff:g id="COUNT">%d</xliff:g> dígito numérico"</item>
+<item quantity="other">"Deve conter pelo menos <xliff:g example="3" id="count">%d</xliff:g> dígitos numéricos"</item>
+</plurals>
+<plurals name="lockpassword_password_requires_symbols">
+<item quantity="one">"Precisa ter pelo menos <xliff:g id="COUNT">%d</xliff:g> símbolo especial"</item>
+<item quantity="other">"Deve conter pelo menos <xliff:g example="3" id="count">%d</xliff:g> símbolos especiais"</item>
+</plurals>
+<plurals name="lockpassword_password_requires_nonletter">
+<item quantity="one">"Precisa ter pelo menos <xliff:g id="COUNT">%d</xliff:g> caractere que não seja letra"</item>
+<item quantity="other">"Deve conter pelo menos <xliff:g example="3" id="count">%d</xliff:g> caracteres diferentes de letras"</item>
+</plurals>
+<string name="lockpassword_password_recently_used">"O administrador do dispositivo não permite o uso de uma senha recente"</string>
+<string name="error_saving_password">"Erro ao salvar senha"</string>
+<string name="lockpassword_password_blacklisted_by_admin">"Senhas comuns foram bloqueadas pelo seu administrador de TI. Tente uma senha diferente."</string>
+<string name="lockpassword_pin_no_sequential_digits">"Não é permitido sequência de dígitos crescente, decrescente ou repetida."</string>
+<string name="setup_lock_settings_options_button_label">"Opções de bloqueio de tela"</string>
+<string name="build_info_fmt">"<xliff:g example="google/gcar_emu_x86/..." id="fingerprint">%1$s</xliff:g>\n<xliff:g example="Thu Aug 30" id="date">%2$s</xliff:g> : há <xliff:g example="4" id="num_days">%3$s</xliff:g> dias"</string>
+<string name="add_device_title">"Adicionar dispositivo confiável"</string>
+<string name="add_device_summary">"O Bluetooth será ativado para adicionar o dispositivo confiável"</string>
+<string name="trusted_device">"Dispositivos confiáveis"</string>
+<plurals name="trusted_device_subtitle">
+<item quantity="one">"<xliff:g id="count" example="1">%d</xliff:g> dispositivo"</item>
+<item quantity="other">"<xliff:g id="count" example="10">%d</xliff:g> dispositivos"</item>
+</plurals>
+<string name="remove_device_message">"O <xliff:g id="connected_device_name" example="Pixel2">%1$s</xliff:g> desbloqueará este veículo quando estiver conectado. Se alguém pegar seu <xliff:g id="connected_device_name" example="Pixel2">%1$s</xliff:g>, poderá acessar este dispositivo"</string>
+<string name="trusted_device_confirm_button">"Confirmar"</string>
+<string name="trusted_device_remove_button">"Remover dispositivo confiável"</string>
+<string name="trusted_device_done_button">"Concluído"</string>
+<string name="add_trusted_device_instruction">"Use o aplicativo associado para configurar um dispositivo confiável. Depois de configurado, seu perfil de usuário será desbloqueado automaticamente quando o telefone for conectado perto do veículo."</string>
+<string name="trusted_device_download_app">"1. Baixe o aplicativo associado no telefone"</string>
+<string name="trusted_device_select_device">"2. Selecione <xliff:g id="car_name" example="MyCar">%1$s</xliff:g> no telefone para emparelhar os dispositivos"</string>
+<string name="trusted_device_safety_alert">"Um dispositivo confiável próximo ao veículo desbloqueará o perfil do usuário no momento da ignição, mesmo que outra pessoa tenha o dispositivo consigo."</string>
+<string name="trusted_device_pairing_code_dialog_title">"Confirme se os códigos de emparelhamento coincidem"</string>
+<string name="trusted_device_success_enrollment_toast">"O telefone foi registrado com sucesso"</string>
+<string name="trusted_device_fail_enrollment_toast">"Falha de registro do <xliff:g id="device_name" example="Pixel2">%1$s</xliff:g>"</string>
+<string name="trusted_device_set_authentication_reminder">"Adicionar um dispositivo confiável requer que você defina um método de autenticação em seguida. Se você não tiver consigo seu dispositivo confiável, será necessário autenticação para acessar seu perfil."</string>
+<string name="trusted_device_disconnected_toast">"Dispositivo desconectado."</string>
+<string name="forget">"Ignorar"</string>
+<string name="connect">"Conectar"</string>
+<string name="disconnect">"Desconectar"</string>
+<string name="delete_button">"excluir"</string>
+<string name="remove_button">"Remover"</string>
+<string name="cancel">"Cancelar"</string>
+<string name="allow">"Permitir"</string>
+<string name="deny">"Negar"</string>
+<string name="backspace_key">"Tecla Backspace"</string>
+<string name="enter_key">"Tecla Enter"</string>
+<string name="exit_retail_button_text">"Sair da demonstração"</string>
+<string name="exit_retail_mode_dialog_title">"Sair do modo de demonstração"</string>
+<string name="exit_retail_mode_dialog_body">"Isso excluirá a conta de demonstração e redefinirá o sistema aos dados de fábrica. Todos os dados do usuário serão perdidos."</string>
+<string name="exit_retail_mode_dialog_confirmation_button_text">"Sair da demonstração"</string>
+<string name="suggestion_dismiss_button">"Dispensar"</string>
+<string name="restricted_while_driving">"Recurso não disponível ao dirigir."</string>
+<string name="add_user_restricted_while_driving">"Não é possível adicionar usuário ao dirigir."</string>
+</resources>
